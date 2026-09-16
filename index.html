@@ -243,7 +243,13 @@ main{position:relative;z-index:1;width:var(--w);margin:0 auto;padding:22px 0 90p
 .ovt .tm{color:var(--paper);min-width:74px;max-width:132px;overflow:hidden;text-overflow:ellipsis}
 .ovt .vs{color:var(--muted-2);font-family:"Barlow Condensed",sans-serif;font-size:11px;
   letter-spacing:.08em;width:26px}
-.ovt .sc2{font-family:"Barlow Condensed",sans-serif;font-size:14px;font-weight:700;color:var(--gold-hi)}
+.ovt .vs.hasc{width:auto;min-width:56px;padding:5px 6px;line-height:1.15}
+.ovt .sc2{display:block;font-family:"Barlow Condensed",sans-serif;font-size:15px;font-weight:700;color:var(--gold-hi)}
+.ovt .vs.ip .sc2{color:var(--live)}
+.ovt .sd2{display:block;margin-top:3px;padding-top:3px;border-top:1px solid var(--line-soft);
+  font-family:"Barlow Condensed",sans-serif;font-size:11px;font-weight:500;color:var(--muted)}
+.ovt .sd2 i{display:block;font-style:normal;line-height:1.35;white-space:nowrap}
+.ovt .ipt{display:block;margin-top:2px;font-size:9px;letter-spacing:.14em;color:var(--live)}
 .ovt .w2{color:var(--gold-hi);font-weight:700}
 .ovt .g2{color:var(--muted-2);font-size:11px}
 .ovt tr.live2 td{background:rgba(226,87,76,.1)}
@@ -310,14 +316,22 @@ table.st .rk{font-family:"Barlow Condensed",sans-serif;font-size:17px;font-weigh
 table.st tr.top .rk{color:var(--gold-hi)}
 table.st tr.top td:nth-child(2){color:var(--gold-hi)}
 table.st tr.qual{box-shadow:inset 2px 0 0 var(--gold-deep)}
-.mx{width:100%;min-width:640px;font-size:12px}
+.mx{width:100%;min-width:760px;font-size:12px}
 .mx th,.mx td{border:1px solid var(--line-soft);padding:6px 5px;text-align:center;
   font-variant-numeric:tabular-nums;vertical-align:middle}
 .mx th{background:var(--ink-2);color:var(--muted-2);font-weight:500;font-size:11px}
 .mx td.self{background:var(--ink-3)}
-.mx td.res{font-family:"Barlow Condensed",sans-serif;font-size:14px;font-weight:600;line-height:1.25}
-.mx td.res small{display:block;font-family:"Noto Sans SC",sans-serif;font-size:9.5px;color:var(--muted-2);font-weight:400}
+.mx td.res{font-family:"Barlow Condensed",sans-serif;font-size:15px;font-weight:600;line-height:1.15;
+  min-width:58px;padding:5px 4px}
+.mx td.res small{display:block;margin-top:3px;padding-top:3px;
+  border-top:1px solid var(--line-soft);font-family:"Barlow Condensed",sans-serif;
+  font-size:11.5px;color:var(--muted);font-weight:500;letter-spacing:.2px}
+.mx td.res small i{display:block;font-style:normal;line-height:1.35;white-space:nowrap}
+.mx td.res small i.l{color:var(--muted-2)}
 .mx td.win{color:var(--gold-hi)}
+.mx td.res.ip{color:var(--live);background:rgba(226,87,76,.07)}
+.mx td.res .ipt2{display:block;margin-top:2px;font-family:"Noto Sans SC",sans-serif;
+  font-size:8.5px;letter-spacing:.14em;color:var(--live);font-weight:400}
 
 /* ---------- bracket（球赛转播风格） ---------- */
 .scroller{overflow-x:auto;overflow-y:visible;-webkit-overflow-scrolling:touch;
@@ -569,6 +583,7 @@ a.card:hover{border-color:var(--gold-deep);transform:translateY(-2px)}
 
 </head>
 <body>
+
 <div class="bg" aria-hidden="true">
  <div class="glow"></div>
  <div class="rays"></div>
@@ -681,6 +696,11 @@ function setsWon(m){var a=0,b=0;(m.sets||[]).forEach(function(s){
     var x=+s[0],y=+s[1];if(x>y)a++;else if(y>x)b++;}});return [a,b];}
 function isFinal(m){if(m.status==='final')return true;var w=setsWon(m);return w[0]>=2||w[1]>=2;}
 function isLive(m){return m.status==='live'&&!isFinal(m);}
+/* 已填过任意一局比分 —— 只要填了就立刻对外显示 */
+function setList(m){return (m.sets||[]).filter(function(s){
+  return s&&s[0]!==''&&s[0]!=null&&s[1]!==''&&s[1]!=null;});}
+function hasScore(m){return setList(m).length>0;}
+function showScore(m){return hasScore(m)||isLive(m)||isFinal(m);}
 function winnerCode(m){ if(!isFinal(m))return null; var w=setsWon(m);
   var a=resolve(m.a),b=resolve(m.b); if(!a||!b)return null; return w[0]>w[1]?a:b;}
 function loserCode(m){ if(!isFinal(m))return null; var w=setsWon(m);
@@ -868,20 +888,21 @@ function annList(n){
 /* ----- match row ----- */
 function matchRow(m){
   var a=resolve(m.a),b=resolve(m.b),w=setsWon(m),fin=isFinal(m),lv=isLive(m);
+  var ip=!fin&&(lv||hasScore(m));            /* 进行中：已填分但未打完 */
+  var sh=showScore(m);
   var wa=fin&&w[0]>w[1],wb=fin&&w[1]>w[0];
-  var setStr=(m.sets||[]).filter(function(s){return s&&s[0]!==''&&s[0]!=null&&s[1]!==''&&s[1]!=null;})
-    .map(function(s){return s[0]+':'+s[1];}).join('  ');
-  var h='<div class="m'+(lv?' live':(fin?' final':''))+'">';
+  var setStr=setList(m).map(function(s){return s[0]+':'+s[1];}).join('  ');
+  var h='<div class="m'+(ip?' live':(fin?' final':''))+'">';
   h+='<div class="no">'+m.no+'<em>'+esc(m.court)+'</em></div>';
   h+='<div class="who">'+
      '<div class="side'+(wa?' w':'')+'"><span class="nm">'+esc(slotLabel(m.a))+'</span>'+
-       '<span class="sc">'+(fin||lv?w[0]:'')+'</span></div>'+
+       '<span class="sc">'+(sh?w[0]:'')+'</span></div>'+
      '<div class="side'+(wb?' w':'')+'"><span class="nm">'+esc(slotLabel(m.b))+'</span>'+
-       '<span class="sc">'+(fin||lv?w[1]:'')+'</span></div>'+
+       '<span class="sc">'+(sh?w[1]:'')+'</span></div>'+
      (setStr?'<div class="sets">'+esc(setStr)+'</div>':'')+
      '</div>';
   h+='<div class="meta">'+
-     (lv?'<span class="chip live">进行中</span>':(fin?'<span class="chip final">已结束</span>':
+     (ip?'<span class="chip live">进行中</span>':(fin?'<span class="chip final">已结束</span>':
        '<span class="chip">'+esc(m.time)+'</span>'))+
      '<span class="chip stage">'+esc(m.stage==='小组赛'?m.group+'组':m.stage)+'</span>'+
      (m.ref?'<span class="ref">裁判 '+esc(refLabel(m))+'</span>':'')+
@@ -901,10 +922,19 @@ function slotCell(m,side){
   var w=setsWon(m),fin=isFinal(m),win=fin&&(i===0?w[0]>w[1]:w[1]>w[0]);
   return '<td class="tm'+(win?' w2':'')+'">'+esc(slotLabel(ref))+'</td>';
 }
+/* 总览表中间那一格：大比分 + 每局比分 */
+function vsCell(m){
+  if(!showScore(m))return '<td class="vs">vs</td>';
+  var w=setsWon(m),fin=isFinal(m);
+  var sets=setList(m);
+  return '<td class="vs hasc'+(fin?'':' ip')+'">'+
+    '<span class="sc2">'+w[0]+':'+w[1]+'</span>'+
+    (sets.length?'<span class="sd2">'+sets.map(function(s){
+      return '<i>'+esc(s[0]+':'+s[1])+'</i>';}).join('')+'</span>':'')+
+    (fin?'':'<span class="ipt">进行中</span>')+'</td>';
+}
 function ovRow(m){
-  var w=setsWon(m),fin=isFinal(m),lv=isLive(m);
-  return slotCell(m,'a')+'<td class="vs">'+(fin||lv?'<span class="sc2">'+w[0]+':'+w[1]+'</span>':'vs')+'</td>'+
-    slotCell(m,'b')+
+  return slotCell(m,'a')+vsCell(m)+slotCell(m,'b')+
     '<td class="g2">'+esc(m.stage==='小组赛'?m.group+'组':m.stage)+'</td>'+
     '<td class="g2">'+esc(refLabel(m)||'—')+'</td>';
 }
@@ -925,10 +955,7 @@ function scheduleTable(){
       h+='<tr'+(lv?' class="live2"':'')+'><td>'+esc(tm)+'</td>';
       h+= c1?('<td class="no2">'+c1.no+'</td>'+ovRow(c1)):'<td colspan="6"></td>';
       if(c2){
-        h+='<td class="no2">'+c2.no+'</td>'+slotCell(c2,'a')+
-           '<td class="vs">'+((isFinal(c2)||isLive(c2))?'<span class="sc2">'+setsWon(c2)[0]+':'+setsWon(c2)[1]+'</span>':'vs')+'</td>'+
-           slotCell(c2,'b')+'<td class="g2">'+esc(c2.stage==='小组赛'?c2.group+'组':c2.stage)+'</td>'+
-           '<td class="g2">'+esc(refLabel(c2)||'—')+'</td>';
+        h+='<td class="no2">'+c2.no+'</td>'+ovRow(c2);
       } else h+='<td colspan="6"></td>';
       h+='</tr>';
       (D.events||[]).filter(function(e){return e.day===dy.k&&e.after===tm;}).forEach(function(e){
@@ -994,7 +1021,9 @@ function viewResult(){
       '</tbody></table></div>';
     h+='<p style="font-size:11.5px;color:var(--muted-2);margin-top:7px">排名依次比较：胜场 → 比赛积分 → C值（胜局÷负局）→ Z值（总得分÷总失分）。2:0 胜得 3 分、负得 0 分；2:1 胜得 2 分、负得 1 分。</p>';
     h+=secHead(g+' 组成绩公布表','CROSS TABLE');
+    h+='<div class="swipe"><span>左右滑动看完整表格</span><i></i><span>→</span></div>';
     h+='<div class="tbl-wrap">'+matrix(g)+'</div>';
+    h+='<p style="font-size:11.5px;color:var(--muted-2);margin-top:7px">格子里上方为大比分，下方为每局比分（本队得分在前）。</p>';
   });
   var fins=D.matches.filter(isFinal);
   h+=secHead('全部赛果','ALL RESULTS · '+fins.length+' 场');
@@ -1005,12 +1034,11 @@ function matrix(g){
   var st=standings(g),codes=D.teams.filter(function(t){return t.group===g;}).map(function(t){return t.code;});
   var res={};
   D.matches.forEach(function(m){
-    if(m.stage!=='小组赛'||m.group!==g||!isFinal(m))return;
+    if(m.stage!=='小组赛'||m.group!==g||!showScore(m))return;
     var a=resolve(m.a),b=resolve(m.b);if(!a||!b)return;
-    var w=setsWon(m);
-    var sets=(m.sets||[]).filter(function(s){return s&&s[0]!==''&&s[0]!=null&&s[1]!==''&&s[1]!=null;});
-    res[a+'|'+b]={s:w[0]+':'+w[1],d:sets.map(function(s){return s[0]+':'+s[1];}).join(' '),win:w[0]>w[1]};
-    res[b+'|'+a]={s:w[1]+':'+w[0],d:sets.map(function(s){return s[1]+':'+s[0];}).join(' '),win:w[1]>w[0]};
+    var w=setsWon(m),fin=isFinal(m),sets=setList(m);
+    res[a+'|'+b]={s:w[0]+':'+w[1],d:sets.map(function(s){return [s[0],s[1]];}),win:fin&&w[0]>w[1],fin:fin};
+    res[b+'|'+a]={s:w[1]+':'+w[0],d:sets.map(function(s){return [s[1],s[0]];}),win:fin&&w[1]>w[0],fin:fin};
   });
   var h='<table class="mx"><thead><tr><th>队伍</th>'+
     codes.map(function(c){return '<th>'+esc(teamName(c))+'</th>';}).join('')+
@@ -1021,7 +1049,12 @@ function matrix(g){
     codes.forEach(function(o){
       if(o===c){h+='<td class="self">—</td>';return;}
       var v=res[c+'|'+o];
-      h+= v?('<td class="res'+(v.win?' win':'')+'">'+v.s+'<small>'+esc(v.d)+'</small></td>'):'<td></td>';
+      if(!v){h+='<td></td>';return;}
+      var det=v.d.length?('<small>'+v.d.map(function(s){
+        var n0=Number(s[0]),n1=Number(s[1]);
+        return '<i'+(n0<n1?' class="l"':'')+'>'+esc(s[0]+':'+s[1])+'</i>';}).join('')+'</small>'):'';
+      h+='<td class="res'+(v.win?' win':'')+(v.fin?'':' ip')+'">'+v.s+det+
+           (v.fin?'':'<span class="ipt2">进行中</span>')+'</td>';
     });
     h+='<td>'+r.w+'</td><td>'+r.l+'</td><td>'+r.pts+'</td><td>'+r.rank+'</td></tr>';
   });
@@ -1991,6 +2024,7 @@ setInterval(function(){
 },CLOUD.env?25000:60000);
 document.addEventListener('visibilitychange',function(){if(!document.hidden&&CB.on)syncNow();});
 </script>
+
 
 </body>
 </html>
