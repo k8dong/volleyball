@@ -1192,6 +1192,18 @@ function viewTeams(){
   });
   return h;
 }
+/* 名单图后缀兼容：jpg → png → jpeg → webp，都没有才提示 */
+var ROSTER_EXT=['jpg','png','jpeg','JPG','PNG','webp'];
+function rosterFallback(img){
+  var n=parseInt(img.getAttribute('data-try')||'0',10)+1;
+  var code=img.getAttribute('data-code')||'';
+  if(n<ROSTER_EXT.length){
+    img.setAttribute('data-try',n);
+    img.src='rosters/'+code+'.'+ROSTER_EXT[n];
+    return;
+  }
+  img.outerHTML='<p class="empty">这支队的名单还没上传</p>';
+}
 function renderRoster(){
   var old=el('rvLayer'); if(old)old.remove();
   if(!UI.rvCode)return;
@@ -1205,7 +1217,7 @@ function renderRoster(){
       '<h4>'+esc(t.name||t.code)+'</h4>'+
       '<button class="rvx" data-rvclose="1">关闭</button></div>'+
     '<div class="rvbody"><img src="rosters/'+t.code+'.jpg" alt="'+esc(t.name||t.code)+' 球员名单" '+
-      'onerror="this.outerHTML=\'<p class=&quot;empty&quot;>这支队的名单还没上传</p>\'">'+
+      'data-code="'+t.code+'" data-try="0" onerror="rosterFallback(this)">'+
       '<div class="rvhint">双指放大看细节 · 长按图片保存</div></div>'+
     '<div class="rvnav">'+
       '<button data-rvgo="'+(i>0?list[i-1].code:'')+'"'+(i>0?'':' disabled')+'>‹ 上一队</button>'+
