@@ -1,8 +1,3 @@
-<!doctype html>
-<html lang="zh-CN">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>粤港澳排球邀请赛</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&amp;family=Noto+Serif+SC:wght@700;900&amp;family=Barlow+Condensed:wght@500;600;700&amp;display=swap">
 <style id="app-style">
@@ -625,9 +620,6 @@ table.trip tr.hi td{background:rgba(224,178,79,.07)}
   padding:10px 18px;border-radius:var(--rl);font-size:13px;box-shadow:0 10px 30px rgba(0,0,0,.6)}
 </style>
 
-</head>
-<body>
-
 <div class="bg" aria-hidden="true">
  <div class="glow"></div>
  <div class="rays"></div>
@@ -745,10 +737,11 @@ function setList(m){return (m.sets||[]).filter(function(s){
   return s&&s[0]!==''&&s[0]!=null&&s[1]!==''&&s[1]!=null;});}
 function hasScore(m){return setList(m).length>0;}
 function showScore(m){return hasScore(m)||isLive(m)||isFinal(m);}
-/* 这一场是不是由 code 这支队执裁（第 31 场起裁判写的是名次代号，不算） */
+/* 这一场是不是由 code 这支队执裁 */
 function isRefOf(m,code){
-  if(!m.ref||m.no>=31||!code||code==='all')return false;
-  return m.ref.split('/').map(function(x){return x.trim();}).indexOf(code)>=0;
+  if(!m.ref||!code||code==='all')return false;
+  return String(m.ref).replace('主办方+','').split('/')
+    .map(function(x){return x.trim();}).indexOf(code)>=0;
 }
 function winnerCode(m){ if(!isFinal(m))return null; var w=setsWon(m);
   var a=resolve(m.a),b=resolve(m.b); if(!a||!b)return null; return w[0]>w[1]?a:b;}
@@ -950,10 +943,164 @@ function matchRow(m,mark){
   h+='</div>';
   return h;
 }
+/* ===================== 第二天裁判自动编排 =====================
+   规则（2026 赛事）：
+   1. 只排第 31 场起的交叉阶段；1–30 场裁判已写死在赛程里。
+   2. 优先派「到目前为止吹得最少」的队。
+   3. 同分时优先派上一时段刚打完、人还在场馆的队（同场地优先）。
+   4. 昇凯 15:00 要走 —— 最晚只吹 13:00–14:00 那一批。
+   5. 港澳队伍打完自己最后一场就不再排（硬性）；广东队尽量不排，实在没人才回头用。
+   6. 冠军赛 / 季军赛副裁由主办方担任，队伍只出两名司线。
+   7. 对阵还没产生的场次先跳过，等打完那一轮再点一次按钮。      */
+var AUTOREF = {
+  from: 31,
+  earlyLeaveName: '昇',        /* 队名里含这个字的队 */
+  earlyLeaveLastTime: '13:00-14:00',  /* 最晚只吹到这一时段 */
+  hostAssist: [45, 46]         /* 这两场：主办方副裁 + 队伍司线 */
+};
+
+function isHkMo(t){ return t && (t.region === '澳门' || t.region === '香港'); }
+
+/* 某个位置「可能是哪几支队」——用于对阵未定时的安全判断 */
+function possTeams(ref){
+  if(!ref) return [];
+  if(ref.t === 'team') return [ref.code];
+  if(ref.t === 'rank'){
+    var r = resolve(ref); if(r) return [r];
+    return D.teams.filter(function(t){return t.group === ref.g;}).map(function(t){return t.code;});
+  }
+  if(ref.t === 'win' || ref.t === 'lose'){
+    var w = resolve(ref); if(w) return [w];
+    var m = matchByNo(ref.m); if(!m) return [];
+    return possTeams(m.a).concat(possTeams(m.b));
+  }
+  return [];
+}
+
+function autoAssignRefs(){
+  var d2 = D.matches.filter(function(m){return m.day === 'd2';})
+                    .sort(function(x,y){return x.no - y.no;});
+  var list = d2.filter(function(m){return m.no >= AUTOREF.from;});
+
+  /* 第二天的时段顺序（含上午的小组赛收尾） */
+  var slots = [], seen = {};
+  d2.forEach(function(m){ if(!seen[m.time]){ seen[m.time] = true; slots.push(m.time); } });
+  var slotIdx = {}; slots.forEach(function(t,i){ slotIdx[t] = i; });
+  var leaveMax = slotIdx[AUTOREF.earlyLeaveLastTime];
+  if(leaveMax === undefined) leaveMax = 99;
+
+  /* 每支队在第二天「可能」出现的最后一个时段；比这更晚就算已经打完 */
+  var lastSlot = {};
+  d2.forEach(function(m){
+    var i = slotIdx[m.time];
+    possTeams(m.a).concat(possTeams(m.b)).forEach(function(c){
+      if(lastSlot[c] === undefined || i > lastSlot[c]) lastSlot[c] = i;
+    });
+  });
+
+  /* 每个时段谁在打球；每片场地每个时段是哪两队 */
+  var playing = {}, courtPlay = {};
+  d2.forEach(function(m){
+    var i = slotIdx[m.time];
+    playing[i] = playing[i] || {};
+    courtPlay[i] = courtPlay[i] || {};
+    var pair = [];
+    [resolve(m.a), resolve(m.b)].forEach(function(c){ if(c){ playing[i][c] = true; pair.push(c); } });
+    courtPlay[i][m.court] = pair;
+  });
+
+  /* 第一天 + 第二天上午已经吹过的场次 */
+  var load = {};
+  D.teams.forEach(function(t){ load[t.code] = 0; });
+  D.matches.filter(function(m){return m.no < AUTOREF.from;}).forEach(function(m){
+    String(m.ref || '').replace('主办方+','').split('/').forEach(function(c){
+      c = c.trim(); if(load[c] !== undefined) load[c] += 1;
+    });
+  });
+  var base = JSON.parse(JSON.stringify(load));
+
+  var assignedAt = {};      /* 时段 -> 本时段已经派出去的队 */
+  var changes = [], skipped = [];
+
+  list.forEach(function(m){
+    var a = resolve(m.a), b = resolve(m.b);
+    if(!a || !b){ skipped.push({no:m.no, why:'对阵还没产生'}); return; }
+
+    var i = slotIdx[m.time];
+    var hostOnly = AUTOREF.hostAssist.indexOf(m.no) >= 0;
+    assignedAt[i] = assignedAt[i] || {};
+
+    var prevSame = (courtPlay[i-1] && courtPlay[i-1][m.court]) || [];
+    var prevAny  = playing[i-1] || {};
+
+    var cands = [];
+    D.teams.forEach(function(t){
+      var c = t.code;
+      if(c === a || c === b) return;                       /* 自己在打这一场 */
+      if(playing[i] && playing[i][c]) return;              /* 同时段在另一片场地打球 */
+      if(assignedAt[i][c]) return;                         /* 同时段已经派去另一片场地 */
+
+      /* 提前离场的队（昇凯）只吹到指定时段为止 */
+      if(AUTOREF.earlyLeaveName && (t.name || '').indexOf(AUTOREF.earlyLeaveName) >= 0
+         && i > leaveMax) return;
+
+      var gone = (lastSlot[c] === undefined) || (lastSlot[c] < i);   /* 自己的比赛全打完了 */
+      if(gone && isHkMo(t)) return;                        /* 港澳队打完就走，硬性不排 */
+
+      var stay = 0;                                        /* 人还在场边 */
+      if(prevSame.indexOf(c) >= 0) stay = 2;
+      else if(prevAny[c]) stay = 1;
+
+      /* 下一时段自己就要上场，尽量让他们歇着 */
+      var nextPlay = (playing[i+1] && playing[i+1][c]) ? 1 : 0;
+
+      cands.push({ code:c, load:load[c], stay:stay, next:nextPlay, soft: gone ? 1 : 0 });
+    });
+
+    if(!cands.length){
+      m.ref = '主办方';
+      changes.push({no:m.no, ref:'主办方', why:'没有可派的队伍，由主办方顶上'});
+      return;
+    }
+
+    cands.sort(function(x,y){
+      if(x.soft !== y.soft) return x.soft - y.soft;        /* 已完赛的广东队放最后 */
+      if(x.load !== y.load) return x.load - y.load;        /* 吹得少的优先 */
+      if(x.next !== y.next) return x.next - y.next;        /* 下一场就要自己上的放后面 */
+      if(x.stay !== y.stay) return y.stay - x.stay;        /* 刚打完还在场边的优先 */
+      return x.code < y.code ? -1 : 1;
+    });
+
+    var pick = cands[0];
+    var why = ['已吹 ' + pick.load + ' 场'];
+    if(pick.stay === 2) why.push('刚在本场地打完');
+    else if(pick.stay === 1) why.push('上一时段刚打完');
+    if(pick.soft) why.push('自己已完赛，实在排不开才用');
+
+    if(hostOnly){
+      m.ref = '主办方+' + pick.code;
+      load[pick.code] += 0.5;
+      why.unshift('主办方副裁，' + teamName(pick.code) + ' 出两名司线');
+    }else{
+      m.ref = pick.code;
+      load[pick.code] += 1;
+    }
+    assignedAt[i][pick.code] = true;
+    changes.push({no:m.no, ref:m.ref, why:why.join('，')});
+  });
+
+  clearCache();
+  return { changes:changes, skipped:skipped, load:load, base:base };
+}
+
 function refLabel(m){
   if(!m.ref)return '';
-  if(m.no>=31)return m.ref;             /* 第二天用名次代号，保持原样 */
-  return m.ref.split('/').map(function(c){var t=teamByCode(c.trim());return t?(t.name||c):c;}).join(' / ');
+  var s=String(m.ref).trim();
+  if(s.indexOf('主办方+')===0){
+    var c=s.slice(4).trim();
+    return '副裁 主办方 · 司线 '+teamName(c);
+  }
+  return s.split('/').map(function(c){c=c.trim();var t=teamByCode(c);return t?(t.name||c):c;}).join(' / ');
 }
 
 /* ----- schedule ----- */
@@ -1798,8 +1945,55 @@ function paneScore(){
   });
   return h;
 }
+var AR=null;   /* 上一次自动排裁判的结果 */
+function refAutoBox(){
+  var h='<div class="box"><h4>第二天裁判自动编排</h4>'+
+    '<p style="font-size:12.5px;color:var(--muted-2);line-height:1.75;margin-bottom:10px">'+
+    '小组赛打完、名次出来之后点一下，系统会把第 31 场起的裁判排好。规则：'+
+    '<b>吹得少的队优先</b>；同样少的，优先派刚在同一片场地打完、人还在场边的队；'+
+    '昇凯 14:00 起不再安排；港澳队打完自己最后一场就不再排（广东队尽量不排）；'+
+    '冠亚军赛和季军赛由主办方担任副裁，队伍只出两名司线。'+
+    '<br>对阵还没产生的场次会自动跳过——打完一轮再点一次就行。'+
+    '<b>排完记得点右下角的「发布更新」。</b></p>'+
+    '<div style="display:flex;gap:8px;flex-wrap:wrap">'+
+    '<button class="btn" id="refAuto">自动排第二天裁判</button>'+
+    '<button class="mini" id="refClear">清空第 31 场起的裁判</button></div>';
+  if(AR){
+    if(AR.changes.length){
+      h+='<div style="margin-top:12px;font-size:12.5px;line-height:1.9">'+
+        '<b style="font-size:12px;color:var(--muted-2)">本次排了 '+AR.changes.length+' 场</b><br>'+
+        AR.changes.map(function(c){
+          return '<span style="display:inline-block;min-width:52px">第 '+c.no+' 场</span>'+
+            '<b>'+esc(refLabel({no:c.no,ref:c.ref}))+'</b>'+
+            '<span style="color:var(--muted-2)"> · '+esc(c.why)+'</span>';
+        }).join('<br>')+'</div>';
+    }
+    if(AR.skipped.length){
+      h+='<div style="margin-top:10px;font-size:12.5px;color:var(--muted-2)">'+
+        '跳过 '+AR.skipped.length+' 场（'+
+        AR.skipped.map(function(s){return '第 '+s.no+' 场';}).join('、')+
+        '）——对阵还没产生，等这一轮打完再点一次。</div>';
+    }
+    var rows=D.teams.map(function(t){
+      return {code:t.code,name:t.name||t.code,b:AR.base[t.code]||0,n:AR.load[t.code]||0};
+    }).sort(function(x,y){return y.n-x.n;});
+    h+='<div style="margin-top:12px"><b style="font-size:12px;color:var(--muted-2)">各队执裁场次（第一天 → 两天合计）</b>'+
+      '<div style="font-size:12.5px;line-height:1.9;margin-top:4px">'+
+      rows.map(function(r){
+        return '<span style="display:inline-block;min-width:130px">'+esc(r.name)+'</span>'+
+          r.b+' → <b>'+(Math.round(r.n*10)/10)+'</b>';
+      }).join('<br>')+'</div>'+
+      '<div style="font-size:11.5px;color:var(--muted-2);margin-top:6px">'+
+      '冠亚军赛 / 季军赛只出司线，按半场计。</div></div>';
+  }
+  h+='</div>';
+  return h;
+}
 function paneSched(){
-  var h='<p style="font-size:12.5px;color:var(--muted-2);margin-bottom:12px">可修改每场的时间、场地与裁判队。第二天 31 场之后的对阵由名次自动生成，不需手填。</p>';
+  var h=refAutoBox()+
+    '<p style="font-size:12.5px;color:var(--muted-2);margin-bottom:12px">可修改每场的时间、场地与裁判队。裁判填队伍代号（A1、B3…），'+
+    '两支队一起帮忙用斜杠分开（A1/B3）；「主办方+A1」表示主办方副裁、A1 出司线。'+
+    '第二天 31 场之后的对阵由名次自动生成，不需手填。</p>';
   D.matches.forEach(function(m){
     h+='<div class="box"><h4>第 '+m.no+' 场 · '+esc(m.stage)+'</h4><div class="row">'+
       '<div class="fld"><label>时间</label><input data-ms="'+m.no+'" data-f="time" value="'+esc(m.time)+'"></div>'+
@@ -2027,6 +2221,20 @@ document.addEventListener('click',async function(e){
     el('admBody').innerHTML=adminPane();
     toast(n?('已写入 '+n+' 支队伍，记得点保存'):'还没有抽签结果');
     return;}
+  if(t.id==='refAuto'){
+    try{
+      AR=autoAssignRefs();
+      mark();
+      el('admBody').innerHTML=adminPane();
+      toast(AR.changes.length?('已排好 '+AR.changes.length+' 场，记得保存'):'暂时没有可排的场次');
+    }catch(err){ toast('排裁判出错：'+((err&&err.message)||'')); }
+    return;}
+  if(t.id==='refClear'){
+    D.matches.forEach(function(m){ if(m.no>=AUTOREF.from) m.ref=''; });
+    AR=null; clearCache(); mark();
+    el('admBody').innerHTML=adminPane();
+    toast('已清空第 31 场起的裁判');
+    return;}
   if(t.id==='drawReload'){await drawLoad();el('admBody').innerHTML=adminPane();toast('抽签结果已刷新');return;}
   if(t.id==='drawReset'){
     if(!CB.on){D.draw=D.draw||{};D.draw.local={};DRAW.slots={};mark();
@@ -2144,7 +2352,3 @@ setInterval(function(){
 },CLOUD.env?25000:60000);
 document.addEventListener('visibilitychange',function(){if(!document.hidden&&CB.on)syncNow();});
 </script>
-
-
-</body>
-</html>
