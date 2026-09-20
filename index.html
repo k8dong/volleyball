@@ -822,7 +822,7 @@ function render(){
   clearCache();
   D.streams=D.streams||[];
   var onair=D.streams.filter(function(s){return s.live&&s.url;}).length;
-  var tabs=[['home','总览 · 交通指南'],['team','队伍介绍'],['schedule','赛程'],['result','小组赛 · 积分'],
+  var tabs=[['home','总览 · 交通指南'],['team','分组及队伍'],['schedule','赛程'],['result','小组赛 · 积分'],
             ['bracket','排位赛 · 对阵图'],['photo','直播 · 相册'],['award','奖项']];
   /* 抽签已结束，这一页不再对外显示。想放回来把 HIDE_DRAW 改成 false 即可。 */
   if(!HIDE_DRAW && (!D.draw||D.draw.enabled!==false))tabs.splice(1,0,['draw','抽签']);
