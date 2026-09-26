@@ -1761,6 +1761,60 @@ async function pgInsertNew(table,row){
   throw new Error(r.msg);
 }
 
+/* BASE = 我这台设备上一次和云端一致时的快照。
+   保存时用它来区分「我改的」和「别人改的」，两边都保住，不再互相覆盖。 */
+var BASE=null;
+function snapBase(){ try{ BASE=JSON.parse(JSON.stringify(D)); }catch(e){ BASE=null; } }
+function sameJson(a,b){ return JSON.stringify(a===undefined?null:a)===JSON.stringify(b===undefined?null:b); }
+
+/* 以云端最新版 C 为底，只把「我确实改动过」的字段盖上去 */
+function mergeForSave(C){
+  var out=JSON.parse(JSON.stringify(C));
+  var mine=0, theirs=0, hitList=[];
+
+  /* 顶层：meta / 公告 / 直播 / 相册 / 奖项 / 抽签 等，整块比较 */
+  Object.keys(D).forEach(function(k){
+    if(k==='matches'||k==='teams')return;
+    if(!sameJson(D[k],BASE[k])){ out[k]=JSON.parse(JSON.stringify(D[k])); mine++; }
+  });
+  if(!out.matches)out.matches=[];
+  if(!out.teams)out.teams=[];
+
+  /* 比赛：一场一场、一个字段一个字段地比 */
+  var bm={},om={};
+  (BASE.matches||[]).forEach(function(m){bm[m.no]=m;});
+  out.matches.forEach(function(m){om[m.no]=m;});
+  var MF=['time','court','ref','status','sets','stage','group','day','a','b'];
+  (D.matches||[]).forEach(function(m){
+    var b=bm[m.no], o=om[m.no];
+    if(!o){ out.matches.push(JSON.parse(JSON.stringify(m))); mine++; return; }
+    if(!b)return;
+    MF.forEach(function(f){
+      var iChanged=!sameJson(m[f],b[f]);
+      var theyChanged=!sameJson(o[f],b[f]);
+      if(iChanged){ o[f]=JSON.parse(JSON.stringify(m[f])); mine++; }
+      else if(theyChanged){ theirs++; if(f==='sets'||f==='status'){ if(hitList.indexOf(m.no)<0)hitList.push(m.no); } }
+    });
+  });
+
+  /* 队伍：同样逐字段 */
+  var bt={},ot={};
+  (BASE.teams||[]).forEach(function(t){bt[t.code]=t;});
+  out.teams.forEach(function(t){ot[t.code]=t;});
+  var TF=['name','region','intro','roster','group'];
+  (D.teams||[]).forEach(function(t){
+    var b=bt[t.code], o=ot[t.code];
+    if(!o||!b)return;
+    TF.forEach(function(f){
+      if(!sameJson(t[f],b[f])){ o[f]=JSON.parse(JSON.stringify(t[f])); mine++; }
+      else if(!sameJson(o[f],b[f])) theirs++;
+    });
+  });
+
+  out.matches.sort(function(x,y){return x.no-y.no;});
+  return {data:out, mine:mine, theirs:theirs, hits:hitList};
+}
+
 async function cloudLoad(){
   if(!CB.on)return false;
   var r=await pgFetch('/site?select=payload&key=eq.main&limit=1');
@@ -1770,15 +1824,37 @@ async function cloudLoad(){
     try{
       var p=(typeof row.payload==='string')?JSON.parse(row.payload):row.payload;
       Object.keys(p).forEach(function(k){D[k]=p[k];});
+      snapBase();
       return true;
     }catch(e){ CB.err='站点数据解析失败'; }
   }
   return false;
 }
+
+/* 保存：先把云端最新拉下来合并，再整体写回。
+   返回这次从别人那边合并进来的改动条数。 */
 async function cloudSave(){
   if(!CB.on)throw new Error('未连接服务器');
+  var theirs=0, hits=[];
+  if(BASE){
+    var r=await pgFetch('/site?select=payload&key=eq.main&limit=1');
+    if(!r.ok)throw new Error(r.msg||'读取云端失败');
+    var row=(r.data&&r.data.length)?r.data[0]:null;
+    if(row&&row.payload){
+      var C=null;
+      try{ C=(typeof row.payload==='string')?JSON.parse(row.payload):row.payload; }catch(e){ C=null; }
+      if(C){
+        var mg=mergeForSave(C);
+        theirs=mg.theirs; hits=mg.hits;
+        Object.keys(mg.data).forEach(function(k){ D[k]=mg.data[k]; });
+        clearCache();
+      }
+    }
+  }
   D.meta.updated=new Date().toLocaleString('zh-CN',{timeZone:'Asia/Shanghai',hour12:false});
   await pgUpsert('site',{key:'main',payload:JSON.stringify(D),ts:Date.now()});
+  snapBase();
+  return {theirs:theirs, hits:hits};
 }
 /* ============ 抽签 ============ */
 var REGIONS=[
@@ -2288,8 +2364,15 @@ async function publish(){
   var btn=el('btnPub');if(btn)btn.disabled=true;
   var st=el('saveSt');
   if(CB.on){
-    try{ if(st)st.textContent='保存到云端…'; await cloudSave(); UI.dirty=false;
-      if(st)st.textContent='已保存，所有人刷新即可看到'; if(btn)btn.disabled=false; toast('已保存到云端'); }
+    try{ if(st)st.textContent='保存到云端…';
+      var mg=await cloudSave(); UI.dirty=false;
+      if(st)st.textContent='已保存，所有人刷新即可看到';
+      if(btn)btn.disabled=false;
+      if(mg&&mg.theirs){
+        var body=el('admBody'); if(body){var sc=body.scrollTop;body.innerHTML=adminPane();body.scrollTop=sc;}
+        toast('已保存；同时合并了另一台设备的 '+mg.theirs+' 处改动'+
+              (mg.hits.length?('（第 '+mg.hits.join('、')+' 场）'):''));
+      }else{ toast('已保存到云端'); } }
     catch(e){ if(btn)btn.disabled=false;
       if(st)st.textContent='保存失败：'+((e&&e.message)||'请检查网络与数据库权限'); }
     return;
@@ -2515,10 +2598,34 @@ drawLoad();
 /* 云端模式下定时同步；本地模式只刷新倒计时 */
 var syncing=false;
 async function syncNow(){
-  if(syncing||UI.admin||UI.dirty||DRAW.busy||DRAW.gate||DRAW.result)return; syncing=true;
-  try{ if(CB.on){ await cloudLoad(); await drawLoad(); } render(); }
+  if(syncing||UI.dirty||DRAW.busy||DRAW.gate||DRAW.result)return;
+  if(UI.admin&&!UI.authed)return;                       /* 还停在密码框 */
+  var ae=document.activeElement;
+  if(UI.admin&&ae&&/^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName))return;   /* 正在输入，别打扰 */
+  syncing=true;
+  try{
+    if(CB.on){
+      var before=JSON.stringify(D);
+      await cloudLoad(); await drawLoad();
+      var changed=(JSON.stringify(D)!==before);
+      if(UI.admin){
+        if(changed){
+          var body=el('admBody');
+          if(body){ var sc=body.scrollTop; body.innerHTML=adminPane(); body.scrollTop=sc; }
+          toast('已同步另一台设备刚才的改动');
+        }
+      }else render();
+    }else if(!UI.admin)render();
+  }
   finally{ syncing=false; }
 }
+/* 改了东西超过 45 秒还没发布，提醒一下 */
+var dirtyAt=0;
+setInterval(function(){
+  if(!UI.dirty){dirtyAt=0;return;}
+  if(!dirtyAt){dirtyAt=Date.now();return;}
+  if(Date.now()-dirtyAt>45000){ dirtyAt=Date.now(); toast('还有改动没发布，记得点「发布更新」'); }
+},15000);
 setInterval(function(){
   if(document.hidden)return;
   if(CB.on)syncNow();
