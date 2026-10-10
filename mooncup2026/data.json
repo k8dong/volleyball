@@ -1597,8 +1597,12 @@
         ]
       ],
       "status": "final",
-      "result": "draw",
-      "resultNote": "主办方确认平局；未提供局分"
+      "result": "win",
+      "resultNote": "海派甜星 2:1 励勤；各局比分未提供",
+      "matchScore": [
+        2,
+        1
+      ]
     },
     {
       "no": 46,
@@ -1673,42 +1677,11 @@
   "links": [],
   "awards": {
     "podium": {
-      "champion": "",
-      "runner": "",
-      "third": ""
+      "champion": "海派甜星",
+      "runner": "励勤",
+      "third": "VBRO、珠海三威集团"
     },
-    "individual": [
-      {
-        "label": "最有价值球员 MVP",
-        "name": "",
-        "team": ""
-      },
-      {
-        "label": "最佳二传",
-        "name": "",
-        "team": ""
-      },
-      {
-        "label": "最佳主攻",
-        "name": "",
-        "team": ""
-      },
-      {
-        "label": "最佳副攻",
-        "name": "",
-        "team": ""
-      },
-      {
-        "label": "最佳接应二传",
-        "name": "",
-        "team": ""
-      },
-      {
-        "label": "最佳自由人",
-        "name": "",
-        "team": ""
-      }
-    ]
+    "individual": []
   },
   "draw": {
     "enabled": false,

@@ -1,5 +1,5 @@
 {
-  "venue": "雪象篮球馆",
+  "venue": "雪象排球馆",
   "address": "广东省深圳市龙岗区中浩二路源创空间雪象园区内 A5 栋一层",
   "capacity": 16,
   "teams": [
@@ -138,39 +138,140 @@
   "albums": [],
   "awards": {
     "podium": {},
-    "individual": []
+    "individual": [
+      {
+        "label": "最有价值球员 ×1",
+        "name": "",
+        "team": ""
+      },
+      {
+        "label": "最佳主攻 ×2",
+        "name": "",
+        "team": ""
+      },
+      {
+        "label": "最佳副攻 ×2",
+        "name": "",
+        "team": ""
+      },
+      {
+        "label": "最佳二传 ×1",
+        "name": "",
+        "team": ""
+      },
+      {
+        "label": "最佳接应 ×1",
+        "name": "",
+        "team": ""
+      },
+      {
+        "label": "最佳自由人 ×1",
+        "name": "",
+        "team": ""
+      }
+    ]
   },
   "updated": null,
   "eventStatus": "scheduled",
   "statusNote": "",
-  "contacts": [],
+  "contacts": [
+    {
+      "name": "李元海",
+      "wechat": "15502252062"
+    },
+    {
+      "name": "冷俊",
+      "wechat": "15367184627"
+    }
+  ],
   "rankingOverrides": {},
   "slug": "xuexiangboys",
   "theme": "boys",
   "title": "雪象杯男子排球邀请赛",
-  "subtitle": "第一届 · 男子排球邀请赛",
+  "subtitle": "第一届「复觌·雪象杯」· 男子排球邀请赛",
   "english": "XUEXIANG CUP · VOLLEY BOYS",
   "slogan": "以球会友，青春无界。",
-  "start": "2026-11-07T00:00:00+08:00",
-  "end": null,
+  "start": "2026-11-07T09:00:00+08:00",
+  "end": "2026-11-07T21:00:00+08:00",
   "dateLabel": "2026.11.07 · 星期六",
-  "timeLabel": "开赛时间待公布",
-  "dateSource": "赛事海报",
+  "timeLabel": "09:00–21:00",
+  "dateSource": "男子赛事章程",
   "poster": "../assets/boys-poster.webp",
   "courts": 4,
-  "groups": [],
-  "groupSize": null,
-  "qualifiedPerGroup": null,
-  "formatConfirmed": false,
-  "registrationDeadline": null,
-  "documentsDeadline": null,
-  "registrationFee": null,
-  "netHeight": "待章程确认",
-  "ball": "待章程确认",
-  "rulesPdf": null,
-  "rules": [],
-  "prizes": null,
-  "posterTitle": "第一届复舰·雪象杯男子排球邀请赛",
+  "groups": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "groupSize": 4,
+  "qualifiedPerGroup": 2,
+  "formatConfirmed": true,
+  "registrationDeadline": "2026-10-17",
+  "documentsDeadline": "2026-10-17",
+  "registrationFee": 1000,
+  "netHeight": "2.43 米",
+  "ball": "Mikasa V200W",
+  "rulesPdf": "rules.pdf",
+  "rules": [
+    {
+      "title": "比赛时间与场馆",
+      "body": "2026 年 11 月 7 日（星期六）09:00–21:00，深圳市龙岗区中浩二路源创空间雪象园区 A5 栋一层雪象排球馆。"
+    },
+    {
+      "title": "小组赛与晋级",
+      "body": "四组前两名出线，其余队伍参加排位赛。淘汰赛：A1 对 D2、B1 对 C2、C1 对 B2、D1 对 A2；半决赛：第 1 场胜方对第 3 场胜方，第 2 场胜方对第 4 场胜方。完整赛程待公布。"
+    },
+    {
+      "title": "局数与局分",
+      "body": "小组赛单循环、三局两胜。前两局 25 分，决胜局 15 分；达到目标分须领先 2 分，章程未设封顶。不套用女子赛的 30／25 分上限。淘汰及排位赛局数与完整赛程待组委会补充。"
+    },
+    {
+      "title": "小组积分与排序",
+      "body": "2:0：胜队 3 分、负队 0 分；2:1：胜队 2 分、负队 1 分。依次比较胜场数、积分、C 值（胜局总数÷负局总数）、Z 值（总得分÷总失分）。全部相同按章程由组委会抽签决定；网站不执行抽签，等待组委会确认名次。"
+    },
+    {
+      "title": "参赛人员与资格",
+      "body": "男子组不设性别限制；每队教练 1 名、队员 8–14 名，报名 13–14 名队员时须有 2 名自由人。每人仅代表一队。参加过排超、全运会、全锦赛或国外同等级及以上赛事的球员，每队每局仅可上场一名。"
+    },
+    {
+      "title": "报名与保险",
+      "body": "10 月 17 日前提交报名表与覆盖比赛日期的保险证明。递补报名：10 月 18–24 日。每队报名费 1000 元。 名单截止后不得随意修改；未按要求购买运动意外保险的人员不具备参赛资格。"
+    },
+    {
+      "title": "执裁与沟通",
+      "body": "各队协同提供赛事裁判，每场比赛提供 2 名司线；队长赛前与赛事负责人交接，争议由队长与当值裁判沟通。"
+    },
+    {
+      "title": "器材",
+      "body": "网高 2.43 米；比赛球 Mikasa V200W。队服原则上统一，球衣须有号码，自由人与其他队员明显区分。"
+    },
+    {
+      "title": "奖项",
+      "body": "前三名颁发奖金、奖牌，并自动获得 2027 年度夏季赛事参赛资格。 冠军 1000 元、亚军 800 元、季军 600 元；个人奖由组委会评定。"
+    }
+  ],
+  "prizes": [
+    1000,
+    800,
+    600
+  ],
+  "posterTitle": "第一届复觌·雪象杯男子排球邀请赛",
   "teamListNote": "已收到 16 个队名；编号为主办方提供的名单顺序，分组尚未确认。",
-  "pendingTeamNumbers": []
+  "pendingTeamNumbers": [],
+  "scoreRules": {
+    "targets": [
+      25,
+      25,
+      15
+    ],
+    "caps": [
+      null,
+      null,
+      null
+    ]
+  },
+  "podiumNote": "前三名颁发奖金、奖牌，并自动获得 2027 年度夏季赛事参赛资格。",
+  "captainNote": "10 月 17 日前提交报名表与覆盖比赛日期的保险证明。递补报名：10 月 18–24 日。每队报名费 1000 元。",
+  "bracketNote": "四组前两名出线，其余队伍参加排位赛。淘汰赛：A1 对 D2、B1 对 C2、C1 对 B2、D1 对 A2；半决赛：第 1 场胜方对第 3 场胜方，第 2 场胜方对第 4 场胜方。完整赛程待公布。"
 }
