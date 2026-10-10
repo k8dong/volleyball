@@ -1,0 +1,176 @@
+{
+  "venue": "雪象篮球馆",
+  "address": "广东省深圳市龙岗区中浩二路源创空间雪象园区内 A5 栋一层",
+  "capacity": 16,
+  "teams": [
+    {
+      "code": "M01",
+      "listNumber": 1,
+      "name": "Zoo Party",
+      "region": "",
+      "group": "",
+      "roster": []
+    },
+    {
+      "code": "M02",
+      "listNumber": 2,
+      "name": "广州超粤",
+      "region": "广州",
+      "group": "",
+      "roster": []
+    },
+    {
+      "code": "M03",
+      "listNumber": 3,
+      "name": "惠州K.T国际学苑",
+      "region": "惠州",
+      "group": "",
+      "roster": []
+    },
+    {
+      "code": "M04",
+      "listNumber": 4,
+      "name": "澳门梓楓体育会",
+      "region": "澳门",
+      "group": "",
+      "roster": []
+    },
+    {
+      "code": "M05",
+      "listNumber": 5,
+      "name": "中山ZMUN",
+      "region": "中山",
+      "group": "",
+      "roster": []
+    },
+    {
+      "code": "M06",
+      "listNumber": 6,
+      "name": "珠海三威",
+      "region": "珠海",
+      "group": "",
+      "roster": []
+    },
+    {
+      "code": "M07",
+      "listNumber": 7,
+      "name": "沙河学院",
+      "region": "",
+      "group": "",
+      "roster": []
+    },
+    {
+      "code": "M08",
+      "listNumber": 8,
+      "name": "VBRO",
+      "region": "",
+      "group": "",
+      "roster": []
+    },
+    {
+      "code": "M09",
+      "listNumber": 9,
+      "name": "GSV",
+      "region": "",
+      "group": "",
+      "roster": []
+    },
+    {
+      "code": "M10",
+      "listNumber": 10,
+      "name": "XJBD",
+      "region": "",
+      "group": "",
+      "roster": []
+    },
+    {
+      "code": "M11",
+      "listNumber": 11,
+      "name": "珞珈山",
+      "region": "",
+      "group": "",
+      "roster": []
+    },
+    {
+      "code": "M12",
+      "listNumber": 12,
+      "name": "兔米特",
+      "region": "",
+      "group": "",
+      "roster": []
+    },
+    {
+      "code": "M13",
+      "listNumber": 13,
+      "name": "小浪底",
+      "region": "",
+      "group": "",
+      "roster": []
+    },
+    {
+      "code": "M14",
+      "listNumber": 14,
+      "name": "南科大",
+      "region": "",
+      "group": "",
+      "roster": []
+    },
+    {
+      "code": "M15",
+      "listNumber": 15,
+      "name": "湘港",
+      "region": "",
+      "group": "",
+      "roster": []
+    },
+    {
+      "code": "M16",
+      "listNumber": 16,
+      "name": "Thu.",
+      "region": "",
+      "group": "",
+      "roster": []
+    }
+  ],
+  "matches": [],
+  "announcements": [],
+  "streams": [],
+  "albums": [],
+  "awards": {
+    "podium": {},
+    "individual": []
+  },
+  "updated": null,
+  "eventStatus": "scheduled",
+  "statusNote": "",
+  "contacts": [],
+  "rankingOverrides": {},
+  "slug": "xuexiangboys",
+  "theme": "boys",
+  "title": "雪象杯男子排球邀请赛",
+  "subtitle": "第一届 · 男子排球邀请赛",
+  "english": "XUEXIANG CUP · VOLLEY BOYS",
+  "slogan": "以球会友，青春无界。",
+  "start": "2026-11-07T00:00:00+08:00",
+  "end": null,
+  "dateLabel": "2026.11.07 · 星期六",
+  "timeLabel": "开赛时间待公布",
+  "dateSource": "赛事海报",
+  "poster": "../assets/boys-poster.webp",
+  "courts": 4,
+  "groups": [],
+  "groupSize": null,
+  "qualifiedPerGroup": null,
+  "formatConfirmed": false,
+  "registrationDeadline": null,
+  "documentsDeadline": null,
+  "registrationFee": null,
+  "netHeight": "待章程确认",
+  "ball": "待章程确认",
+  "rulesPdf": null,
+  "rules": [],
+  "prizes": null,
+  "posterTitle": "第一届复舰·雪象杯男子排球邀请赛",
+  "teamListNote": "已收到 16 个队名；编号为主办方提供的名单顺序，分组尚未确认。",
+  "pendingTeamNumbers": []
+}
