@@ -6,3 +6,13 @@ body.girls{background-color:#d3f6f0;background-image:linear-gradient(180deg,#c5f
 @media(max-width:640px){body.girls,body.boys{background-size:100% 100%,980px auto,980px auto;background-position:center top,center 10px,center bottom}.hero-copy{background:linear-gradient(115deg,#fffefbe8,#ffffffdc)}.event-topline{font-size:10px}.venue-scene{height:140px}}
 
 .event-topline,.event-topline a{min-height:44px}.footer-brand .logo{min-height:44px}
+
+/* V14 girls title sponsor */
+.sponsor-strip{display:flex;align-items:center;justify-content:space-between;gap:12px;background:white;border:1px solid #d5e9e5;border-radius:12px;padding:5px 16px;margin-top:18px}.sponsor-strip>span{font-size:11px;color:#3d5f5b;letter-spacing:.08em}.sponsor-strip img{width:158px;height:auto;display:block}.sponsor-panel{text-align:center;margin:25px 0}.sponsor-panel img{display:block;width:min(280px,85%);height:auto;margin:0 auto 8px}.sponsor-panel h2{font-size:23px}.sponsor-panel p{line-height:1.9}.girls:has(.sponsor-strip) .hero .cup{font-size:clamp(29px,4.5vw,56px);letter-spacing:-.04em;white-space:nowrap}@media(max-width:360px){.girls:has(.sponsor-strip) .hero .cup{font-size:27px}.sponsor-strip img{width:134px}}
+
+/* V15 full silhouettes, never crop a poster into a character */
+.character-peek,.boys .character-peek{background-color:transparent;background-image:url('../assets/girls-cutout.webp');background-size:contain;background-position:center;background-repeat:no-repeat;border:0;border-radius:0;box-shadow:none;transform:none;width:155px;height:155px;right:8px;top:3px}
+.boys .character-peek{background-image:url('../assets/boys-cutout.webp')}
+.venue-scene,.boys .venue-scene{height:230px;background-image:url('../assets/girls-cutout.webp'),linear-gradient(160deg,#e0f8f1,#f7fffd);background-size:auto 94%,100% 100%;background-position:center;background-repeat:no-repeat;border:0;border-radius:16px;width:100%;margin:18px 0 22px}
+.boys .venue-scene{background-image:url('../assets/boys-cutout.webp'),linear-gradient(160deg,#e4f2ff,#f8fcff)}.venue-scene:after{display:none}
+@media(max-width:640px){.character-peek,.boys .character-peek{width:95px;height:110px;right:2px;top:12px;background-size:contain;border:0}.venue-scene,.boys .venue-scene{height:195px;width:100%;margin:16px 0 20px;background-size:auto 94%,100% 100%}}
