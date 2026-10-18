@@ -9,7 +9,8 @@
       "name": "深圳胡牌",
       "region": "深圳",
       "group": "",
-      "roster": []
+      "roster": [],
+      "seed": ""
     },
     {
       "code": "W02",
@@ -17,7 +18,8 @@
       "name": "深圳花园宝宝",
       "region": "深圳",
       "group": "",
-      "roster": []
+      "roster": [],
+      "seed": ""
     },
     {
       "code": "W03",
@@ -25,7 +27,8 @@
       "name": "小晖庭",
       "region": "",
       "group": "",
-      "roster": []
+      "roster": [],
+      "seed": ""
     },
     {
       "code": "W04",
@@ -33,7 +36,8 @@
       "name": "深圳连滚带爬",
       "region": "深圳",
       "group": "",
-      "roster": []
+      "roster": [],
+      "seed": ""
     },
     {
       "code": "W05",
@@ -41,7 +45,8 @@
       "name": "深圳坏猫",
       "region": "深圳",
       "group": "",
-      "roster": []
+      "roster": [],
+      "seed": ""
     },
     {
       "code": "W06",
@@ -49,7 +54,8 @@
       "name": "深圳误人子弟",
       "region": "深圳",
       "group": "",
-      "roster": []
+      "roster": [],
+      "seed": ""
     },
     {
       "code": "W07",
@@ -57,7 +63,8 @@
       "name": "香港酒鬼",
       "region": "香港",
       "group": "",
-      "roster": []
+      "roster": [],
+      "seed": ""
     },
     {
       "code": "W08",
@@ -65,7 +72,8 @@
       "name": "广州超级小黑咪",
       "region": "广州",
       "group": "",
-      "roster": []
+      "roster": [],
+      "seed": ""
     },
     {
       "code": "W09",
@@ -73,7 +81,8 @@
       "name": "深圳Level-0",
       "region": "深圳",
       "group": "",
-      "roster": []
+      "roster": [],
+      "seed": ""
     },
     {
       "code": "W10",
@@ -81,7 +90,8 @@
       "name": "深圳小天地",
       "region": "深圳",
       "group": "",
-      "roster": []
+      "roster": [],
+      "seed": ""
     },
     {
       "code": "W11",
@@ -89,7 +99,8 @@
       "name": "深圳佳佳队",
       "region": "深圳",
       "group": "",
-      "roster": []
+      "roster": [],
+      "seed": ""
     },
     {
       "code": "W12",
@@ -97,7 +108,8 @@
       "name": "广州Apex",
       "region": "广州",
       "group": "",
-      "roster": []
+      "roster": [],
+      "seed": ""
     },
     {
       "code": "W13",
@@ -105,7 +117,8 @@
       "name": "深圳小晴天",
       "region": "深圳",
       "group": "",
-      "roster": []
+      "roster": [],
+      "seed": ""
     },
     {
       "code": "W14",
@@ -113,7 +126,8 @@
       "name": "深圳ICAC",
       "region": "深圳",
       "group": "",
-      "roster": []
+      "roster": [],
+      "seed": ""
     },
     {
       "code": "W15",
@@ -121,7 +135,8 @@
       "name": "香港鲸澜",
       "region": "香港",
       "group": "",
-      "roster": []
+      "roster": [],
+      "seed": ""
     },
     {
       "code": "W16",
@@ -129,10 +144,964 @@
       "name": "香港社畜排球部",
       "region": "香港",
       "group": "",
-      "roster": []
+      "roster": [],
+      "seed": ""
     }
   ],
-  "matches": [],
+  "matches": [
+    {
+      "no": 1,
+      "time": "2026-10-24T09:00",
+      "endTime": "10:00",
+      "court": "1号场",
+      "stage": "group",
+      "group": "A",
+      "a": {
+        "t": "seed",
+        "code": "A1"
+      },
+      "b": {
+        "t": "seed",
+        "code": "A2"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "C1"
+    },
+    {
+      "no": 2,
+      "time": "2026-10-24T09:00",
+      "endTime": "10:00",
+      "court": "2号场",
+      "stage": "group",
+      "group": "A",
+      "a": {
+        "t": "seed",
+        "code": "A3"
+      },
+      "b": {
+        "t": "seed",
+        "code": "A4"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "C4"
+    },
+    {
+      "no": 3,
+      "time": "2026-10-24T09:00",
+      "endTime": "10:00",
+      "court": "3号场",
+      "stage": "group",
+      "group": "B",
+      "a": {
+        "t": "seed",
+        "code": "B1"
+      },
+      "b": {
+        "t": "seed",
+        "code": "B2"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "D1"
+    },
+    {
+      "no": 4,
+      "time": "2026-10-24T09:00",
+      "endTime": "10:00",
+      "court": "4号场",
+      "stage": "group",
+      "group": "B",
+      "a": {
+        "t": "seed",
+        "code": "B3"
+      },
+      "b": {
+        "t": "seed",
+        "code": "B4"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "D4"
+    },
+    {
+      "no": 5,
+      "time": "2026-10-24T10:00",
+      "endTime": "11:00",
+      "court": "1号场",
+      "stage": "group",
+      "group": "C",
+      "a": {
+        "t": "seed",
+        "code": "C1"
+      },
+      "b": {
+        "t": "seed",
+        "code": "C2"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "A1"
+    },
+    {
+      "no": 6,
+      "time": "2026-10-24T10:00",
+      "endTime": "11:00",
+      "court": "2号场",
+      "stage": "group",
+      "group": "C",
+      "a": {
+        "t": "seed",
+        "code": "C3"
+      },
+      "b": {
+        "t": "seed",
+        "code": "C4"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "A3"
+    },
+    {
+      "no": 7,
+      "time": "2026-10-24T10:00",
+      "endTime": "11:00",
+      "court": "3号场",
+      "stage": "group",
+      "group": "D",
+      "a": {
+        "t": "seed",
+        "code": "D1"
+      },
+      "b": {
+        "t": "seed",
+        "code": "D2"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "B1"
+    },
+    {
+      "no": 8,
+      "time": "2026-10-24T10:00",
+      "endTime": "11:00",
+      "court": "4号场",
+      "stage": "group",
+      "group": "D",
+      "a": {
+        "t": "seed",
+        "code": "D3"
+      },
+      "b": {
+        "t": "seed",
+        "code": "D4"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "B3"
+    },
+    {
+      "no": 9,
+      "time": "2026-10-24T11:00",
+      "endTime": "12:00",
+      "court": "1号场",
+      "stage": "group",
+      "group": "A",
+      "a": {
+        "t": "seed",
+        "code": "A1"
+      },
+      "b": {
+        "t": "seed",
+        "code": "A3"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "C2"
+    },
+    {
+      "no": 10,
+      "time": "2026-10-24T11:00",
+      "endTime": "12:00",
+      "court": "2号场",
+      "stage": "group",
+      "group": "A",
+      "a": {
+        "t": "seed",
+        "code": "A2"
+      },
+      "b": {
+        "t": "seed",
+        "code": "A4"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "C3"
+    },
+    {
+      "no": 11,
+      "time": "2026-10-24T11:00",
+      "endTime": "12:00",
+      "court": "3号场",
+      "stage": "group",
+      "group": "B",
+      "a": {
+        "t": "seed",
+        "code": "B1"
+      },
+      "b": {
+        "t": "seed",
+        "code": "B3"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "D2"
+    },
+    {
+      "no": 12,
+      "time": "2026-10-24T11:00",
+      "endTime": "12:00",
+      "court": "4号场",
+      "stage": "group",
+      "group": "B",
+      "a": {
+        "t": "seed",
+        "code": "B2"
+      },
+      "b": {
+        "t": "seed",
+        "code": "B4"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "D3"
+    },
+    {
+      "no": 13,
+      "time": "2026-10-24T12:00",
+      "endTime": "13:00",
+      "court": "1号场",
+      "stage": "group",
+      "group": "C",
+      "a": {
+        "t": "seed",
+        "code": "C1"
+      },
+      "b": {
+        "t": "seed",
+        "code": "C3"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "A1"
+    },
+    {
+      "no": 14,
+      "time": "2026-10-24T12:00",
+      "endTime": "13:00",
+      "court": "2号场",
+      "stage": "group",
+      "group": "C",
+      "a": {
+        "t": "seed",
+        "code": "C2"
+      },
+      "b": {
+        "t": "seed",
+        "code": "C4"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "A2"
+    },
+    {
+      "no": 15,
+      "time": "2026-10-24T12:00",
+      "endTime": "13:00",
+      "court": "3号场",
+      "stage": "group",
+      "group": "D",
+      "a": {
+        "t": "seed",
+        "code": "D1"
+      },
+      "b": {
+        "t": "seed",
+        "code": "D3"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "B1"
+    },
+    {
+      "no": 16,
+      "time": "2026-10-24T12:00",
+      "endTime": "13:00",
+      "court": "4号场",
+      "stage": "group",
+      "group": "D",
+      "a": {
+        "t": "seed",
+        "code": "D2"
+      },
+      "b": {
+        "t": "seed",
+        "code": "D4"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "B2"
+    },
+    {
+      "no": 17,
+      "time": "2026-10-24T13:00",
+      "endTime": "14:00",
+      "court": "1号场",
+      "stage": "group",
+      "group": "A",
+      "a": {
+        "t": "seed",
+        "code": "A1"
+      },
+      "b": {
+        "t": "seed",
+        "code": "A4"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "C3"
+    },
+    {
+      "no": 18,
+      "time": "2026-10-24T13:00",
+      "endTime": "14:00",
+      "court": "2号场",
+      "stage": "group",
+      "group": "A",
+      "a": {
+        "t": "seed",
+        "code": "A2"
+      },
+      "b": {
+        "t": "seed",
+        "code": "A3"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "C2"
+    },
+    {
+      "no": 19,
+      "time": "2026-10-24T13:00",
+      "endTime": "14:00",
+      "court": "3号场",
+      "stage": "group",
+      "group": "B",
+      "a": {
+        "t": "seed",
+        "code": "B1"
+      },
+      "b": {
+        "t": "seed",
+        "code": "B4"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "D3"
+    },
+    {
+      "no": 20,
+      "time": "2026-10-24T13:00",
+      "endTime": "14:00",
+      "court": "4号场",
+      "stage": "group",
+      "group": "B",
+      "a": {
+        "t": "seed",
+        "code": "B2"
+      },
+      "b": {
+        "t": "seed",
+        "code": "B3"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "D2"
+    },
+    {
+      "no": 21,
+      "time": "2026-10-24T14:00",
+      "endTime": "15:00",
+      "court": "1号场",
+      "stage": "group",
+      "group": "C",
+      "a": {
+        "t": "seed",
+        "code": "C1"
+      },
+      "b": {
+        "t": "seed",
+        "code": "C4"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "A4"
+    },
+    {
+      "no": 22,
+      "time": "2026-10-24T14:00",
+      "endTime": "15:00",
+      "court": "2号场",
+      "stage": "group",
+      "group": "C",
+      "a": {
+        "t": "seed",
+        "code": "C2"
+      },
+      "b": {
+        "t": "seed",
+        "code": "C3"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "A2"
+    },
+    {
+      "no": 23,
+      "time": "2026-10-24T14:00",
+      "endTime": "15:00",
+      "court": "3号场",
+      "stage": "group",
+      "group": "D",
+      "a": {
+        "t": "seed",
+        "code": "D1"
+      },
+      "b": {
+        "t": "seed",
+        "code": "D4"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "B4"
+    },
+    {
+      "no": 24,
+      "time": "2026-10-24T14:00",
+      "endTime": "15:00",
+      "court": "4号场",
+      "stage": "group",
+      "group": "D",
+      "a": {
+        "t": "seed",
+        "code": "D2"
+      },
+      "b": {
+        "t": "seed",
+        "code": "D3"
+      },
+      "status": "upcoming",
+      "sets": [],
+      "ref": "B2"
+    },
+    {
+      "no": 25,
+      "time": "2026-10-24T15:30",
+      "endTime": "16:30",
+      "court": "1号场",
+      "stage": "placement",
+      "stageLabel": "9–16名四分之一决赛",
+      "group": "",
+      "a": {
+        "t": "rank",
+        "g": "A",
+        "r": 3
+      },
+      "b": {
+        "t": "rank",
+        "g": "B",
+        "r": 4
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 26,
+      "time": "2026-10-24T15:30",
+      "endTime": "16:30",
+      "court": "2号场",
+      "stage": "placement",
+      "stageLabel": "9–16名四分之一决赛",
+      "group": "",
+      "a": {
+        "t": "rank",
+        "g": "B",
+        "r": 3
+      },
+      "b": {
+        "t": "rank",
+        "g": "A",
+        "r": 4
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 27,
+      "time": "2026-10-24T15:30",
+      "endTime": "16:30",
+      "court": "3号场",
+      "stage": "placement",
+      "stageLabel": "9–16名四分之一决赛",
+      "group": "",
+      "a": {
+        "t": "rank",
+        "g": "C",
+        "r": 3
+      },
+      "b": {
+        "t": "rank",
+        "g": "D",
+        "r": 4
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 28,
+      "time": "2026-10-24T15:30",
+      "endTime": "16:30",
+      "court": "4号场",
+      "stage": "placement",
+      "stageLabel": "9–16名四分之一决赛",
+      "group": "",
+      "a": {
+        "t": "rank",
+        "g": "D",
+        "r": 3
+      },
+      "b": {
+        "t": "rank",
+        "g": "C",
+        "r": 4
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 29,
+      "time": "2026-10-24T16:30",
+      "endTime": "17:30",
+      "court": "1号场",
+      "stage": "knockout",
+      "stageLabel": "1–8名四分之一决赛",
+      "group": "",
+      "a": {
+        "t": "rank",
+        "g": "A",
+        "r": 1
+      },
+      "b": {
+        "t": "rank",
+        "g": "B",
+        "r": 2
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 30,
+      "time": "2026-10-24T16:30",
+      "endTime": "17:30",
+      "court": "2号场",
+      "stage": "knockout",
+      "stageLabel": "1–8名四分之一决赛",
+      "group": "",
+      "a": {
+        "t": "rank",
+        "g": "C",
+        "r": 1
+      },
+      "b": {
+        "t": "rank",
+        "g": "D",
+        "r": 2
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 31,
+      "time": "2026-10-24T16:30",
+      "endTime": "17:30",
+      "court": "3号场",
+      "stage": "knockout",
+      "stageLabel": "1–8名四分之一决赛",
+      "group": "",
+      "a": {
+        "t": "rank",
+        "g": "B",
+        "r": 1
+      },
+      "b": {
+        "t": "rank",
+        "g": "A",
+        "r": 2
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 32,
+      "time": "2026-10-24T16:30",
+      "endTime": "17:30",
+      "court": "4号场",
+      "stage": "knockout",
+      "stageLabel": "1–8名四分之一决赛",
+      "group": "",
+      "a": {
+        "t": "rank",
+        "g": "D",
+        "r": 1
+      },
+      "b": {
+        "t": "rank",
+        "g": "C",
+        "r": 2
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 33,
+      "time": "2026-10-24T17:30",
+      "endTime": "18:30",
+      "court": "1号场",
+      "stage": "placement",
+      "stageLabel": "13–16名排位赛",
+      "group": "",
+      "a": {
+        "t": "lose",
+        "m": 25
+      },
+      "b": {
+        "t": "lose",
+        "m": 26
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 34,
+      "time": "2026-10-24T17:30",
+      "endTime": "18:30",
+      "court": "2号场",
+      "stage": "placement",
+      "stageLabel": "13–16名排位赛",
+      "group": "",
+      "a": {
+        "t": "lose",
+        "m": 27
+      },
+      "b": {
+        "t": "lose",
+        "m": 28
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 35,
+      "time": "2026-10-24T17:30",
+      "endTime": "18:30",
+      "court": "3号场",
+      "stage": "placement",
+      "stageLabel": "9–12名排位赛",
+      "group": "",
+      "a": {
+        "t": "win",
+        "m": 25
+      },
+      "b": {
+        "t": "win",
+        "m": 26
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 36,
+      "time": "2026-10-24T17:30",
+      "endTime": "18:30",
+      "court": "4号场",
+      "stage": "placement",
+      "stageLabel": "9–12名排位赛",
+      "group": "",
+      "a": {
+        "t": "win",
+        "m": 27
+      },
+      "b": {
+        "t": "win",
+        "m": 28
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 37,
+      "time": "2026-10-24T18:30",
+      "endTime": "19:30",
+      "court": "1号场",
+      "stage": "knockout",
+      "stageLabel": "1–4名半决赛",
+      "group": "",
+      "a": {
+        "t": "win",
+        "m": 29
+      },
+      "b": {
+        "t": "win",
+        "m": 30
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 38,
+      "time": "2026-10-24T18:30",
+      "endTime": "19:30",
+      "court": "2号场",
+      "stage": "knockout",
+      "stageLabel": "1–4名半决赛",
+      "group": "",
+      "a": {
+        "t": "win",
+        "m": 31
+      },
+      "b": {
+        "t": "win",
+        "m": 32
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 39,
+      "time": "2026-10-24T18:30",
+      "endTime": "19:30",
+      "court": "3号场",
+      "stage": "placement",
+      "stageLabel": "5–8名排位赛",
+      "group": "",
+      "a": {
+        "t": "lose",
+        "m": 29
+      },
+      "b": {
+        "t": "lose",
+        "m": 30
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 40,
+      "time": "2026-10-24T18:30",
+      "endTime": "19:30",
+      "court": "4号场",
+      "stage": "placement",
+      "stageLabel": "5–8名排位赛",
+      "group": "",
+      "a": {
+        "t": "lose",
+        "m": 31
+      },
+      "b": {
+        "t": "lose",
+        "m": 32
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 41,
+      "time": "2026-10-24T19:30",
+      "endTime": "20:30",
+      "court": "1号场",
+      "stage": "placement",
+      "stageLabel": "13–14名次赛",
+      "group": "",
+      "a": {
+        "t": "win",
+        "m": 33
+      },
+      "b": {
+        "t": "win",
+        "m": 34
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 42,
+      "time": "2026-10-24T19:30",
+      "endTime": "20:30",
+      "court": "2号场",
+      "stage": "placement",
+      "stageLabel": "15–16名次赛",
+      "group": "",
+      "a": {
+        "t": "lose",
+        "m": 33
+      },
+      "b": {
+        "t": "lose",
+        "m": 34
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 43,
+      "time": "2026-10-24T19:30",
+      "endTime": "20:30",
+      "court": "3号场",
+      "stage": "placement",
+      "stageLabel": "9–10名次赛",
+      "group": "",
+      "a": {
+        "t": "win",
+        "m": 35
+      },
+      "b": {
+        "t": "win",
+        "m": 36
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 44,
+      "time": "2026-10-24T19:30",
+      "endTime": "20:30",
+      "court": "4号场",
+      "stage": "placement",
+      "stageLabel": "11–12名次赛",
+      "group": "",
+      "a": {
+        "t": "lose",
+        "m": 35
+      },
+      "b": {
+        "t": "lose",
+        "m": 36
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 45,
+      "time": "2026-10-24T20:30",
+      "endTime": "21:30",
+      "court": "1号场",
+      "stage": "knockout",
+      "stageLabel": "冠军赛",
+      "group": "",
+      "a": {
+        "t": "win",
+        "m": 37
+      },
+      "b": {
+        "t": "win",
+        "m": 38
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 46,
+      "time": "2026-10-24T20:30",
+      "endTime": "21:30",
+      "court": "2号场",
+      "stage": "knockout",
+      "stageLabel": "季军赛",
+      "group": "",
+      "a": {
+        "t": "lose",
+        "m": 37
+      },
+      "b": {
+        "t": "lose",
+        "m": 38
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 47,
+      "time": "2026-10-24T20:30",
+      "endTime": "21:30",
+      "court": "3号场",
+      "stage": "placement",
+      "stageLabel": "5–6名次赛",
+      "group": "",
+      "a": {
+        "t": "win",
+        "m": 39
+      },
+      "b": {
+        "t": "win",
+        "m": 40
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    },
+    {
+      "no": 48,
+      "time": "2026-10-24T20:30",
+      "endTime": "21:30",
+      "court": "4号场",
+      "stage": "placement",
+      "stageLabel": "7–8名次赛",
+      "group": "",
+      "a": {
+        "t": "lose",
+        "m": 39
+      },
+      "b": {
+        "t": "lose",
+        "m": 40
+      },
+      "ref": "主办方",
+      "sets": [],
+      "status": "upcoming"
+    }
+  ],
   "announcements": [
     {
       "title": "极氪·雪象杯，携手上场",
@@ -172,10 +1141,10 @@
   "english": "ZEEKR · XUEXIANG CUP · VOLLEY GIRLS",
   "slogan": "热爱排球，连接你我。",
   "start": "2026-10-24T09:00:00+08:00",
-  "end": "2026-10-24T21:00:00+08:00",
+  "end": "2026-10-24T21:40:00+08:00",
   "dateLabel": "2026.10.24 · 星期六",
-  "timeLabel": "09:00–21:00",
-  "dateSource": "赛事章程",
+  "timeLabel": "09:00–21:30 · 21:40 颁奖",
+  "dateSource": "主办方最新全天赛程",
   "poster": "../assets/girls-poster-v15.webp",
   "courts": null,
   "groups": [
@@ -208,7 +1177,7 @@
     },
     {
       "title": "小组赛局数与封顶",
-      "body": "三局两胜。前两局 25 分、决胜局 15 分，24 平／14 平后需领先 2 分获胜；前两局封顶 30 分，决胜局封顶 25 分。淘汰及排位阶段局分细则以组委会后续确认为准。"
+      "body": "三局两胜。前两局 25 分、决胜局 15 分，24 平／14 平后需领先 2 分获胜；前两局封顶 30 分，决胜局封顶 25 分。淘汰及排位阶段局分细则以组委会后续确认为准。 完整时段以最新赛程为准；各阶段局数如有调整，以组委会确认为准。"
     },
     {
       "title": "小组积分与排序",
@@ -245,10 +1214,41 @@
     600
   ],
   "pendingTeamNumbers": [],
-  "teamListNote": "16 支参赛队伍已公布；编号为名单顺序，分组待组委会确认。",
+  "teamListNote": "16支队伍已公布。线下抽签后由管理后台设置 A1–D4；未设置前赛程显示代号，不将名单顺序当成分组。",
   "sponsor": {
     "name": "极氪",
-    "logo": "../assets/zeekr-logo.png",
+    "logo": "../assets/zeekr-shenzhen-v16.png",
     "label": "赛事冠名赞助"
+  },
+  "scheduleEvents": [
+    {
+      "time": "15:00–15:30",
+      "title": "全员大合照 · 小组赛排名统计"
+    },
+    {
+      "time": "21:40",
+      "title": "颁奖仪式"
+    }
+  ],
+  "bracketNote": "按全天赛程表晋级：15:30 进行9–16名四分之一决赛，16:30 进行1–8名四分之一决赛；各名次赛由对应场次胜负方自动产生。",
+  "drawAssignmentsConfirmed": false,
+  "schemaVersion": 16,
+  "refereeCounts": {
+    "A1": 2,
+    "A2": 2,
+    "A3": 1,
+    "A4": 1,
+    "B1": 2,
+    "B2": 2,
+    "B3": 1,
+    "B4": 1,
+    "C1": 1,
+    "C2": 2,
+    "C3": 2,
+    "C4": 1,
+    "D1": 1,
+    "D2": 2,
+    "D3": 2,
+    "D4": 1
   }
 }
