@@ -1,14 +1,14 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>男子赛 · 赛事管理</title><link rel="stylesheet" href="../shared/event.css?v=28"><link rel="stylesheet" href="../shared/admin.css?v=28"></head><body class="boys live-manager"><main class="wrap manager"><a href="./">← 返回男子赛事</a><h1>复觌·雪象杯男子赛 · 赛事管理</h1><p id="store-status" role="status" aria-live="polite">正在检查云端连接…</p><section id="login-panel" class="panel"><h2>管理员登录</h2><p>登录后设置抽签代号、录入比分并发布到公开页面。</p><form id="login-form"><label>管理密码<input type="password" name="password" autocomplete="current-password" required></label><button class="button" id="login-button">登录</button></form></section><div id="admin-workspace" hidden><div class="toolbar"><button id="cloud-refresh" class="button quiet">刷新云端资料</button><button id="export" class="button quiet">下载数据备份</button><button id="logout" class="button quiet">退出登录</button></div><section class="panel"><h2>1. 填写队伍与分组</h2><p>直接在 A1–D4 填写地区和队名，一次发布16个签位。已有比分后请联系主办方核对，不重新录入分组。</p><form id="draw-form"><div id="draw-fields" class="draw-fields"></div><button class="button">保存队名及分组并发布</button></form><button id="reset-draw" class="button quiet">清空签位（仅开赛前）</button></section><section class="panel"><h2>2. 现场比分</h2><form id="live-score-form"><label>选择场次<select id="live-score-match" name="match"></select></label><p id="score-match-info"></p><label>本场赛制<select id="format-id" name="formatId"><option value="">后半程局数待确认，请先选择</option><option value="bo3-capped">三局两胜 · 25/25/15 · 30/30/25封顶</option><option value="bo3-uncapped">三局两胜 · 25/25/15 · 两分领先不封顶</option></select></label><p class="muted">小组赛按男子章程两分领先、不封顶；后半程须由主办方明确选择本场规则。正在进行的局分可随时保存，只有已结束比赛计入排名。</p><div class="score-grid"><span>局数</span><b id="score-a-label">队伍A</b><b id="score-b-label">队伍B</b><span>第1局</span><label><span class="sr-only">第1局 A队</span><input type="number" inputmode="numeric" min="0" max="1000" name="a1"></label><label><span class="sr-only">第1局 B队</span><input type="number" inputmode="numeric" min="0" max="1000" name="b1"></label><span>第2局</span><label><span class="sr-only">第2局 A队</span><input type="number" inputmode="numeric" min="0" max="1000" name="a2"></label><label><span class="sr-only">第2局 B队</span><input type="number" inputmode="numeric" min="0" max="1000" name="b2"></label><span>第3局</span><label><span class="sr-only">第3局 A队</span><input type="number" inputmode="numeric" min="0" max="1000" name="a3"></label><label><span class="sr-only">第3局 B队</span><input type="number" inputmode="numeric" min="0" max="1000" name="b3"></label></div><label>比赛状态<select name="status"><option value="upcoming">未开始</option><option value="live">正在进行</option><option value="final">已结束</option><option value="postponed">延期</option><option value="cancelled">取消</option></select></label><button class="button">保存比分并发布</button></form></section><section class="panel"><h2>3. 完全同分名次确认</h2><p>仅当本组全部结束、胜场／积分／C／Z完全相同时使用。按组委会最终决定录入次序；网站不执行抽签。后半程已有比分后不可更改。</p><form id="tie-form"><label>组别<select name="group" id="tie-group"><option>A</option><option>B</option><option>C</option><option>D</option></select></label><div id="tie-fields" class="draw-fields"></div><button class="button quiet">确认本组名次并发布</button></form></section><div id="content-manager"></div><section class="panel"><h2>裁判次数</h2><p>小组赛按轮值队伍执裁；每队人员要求按男子章程执行。排位赛主副裁为主办方，边裁标注上一场比赛队伍。</p><div id="ref-counts" class="draw-fields"></div></section><section class="panel"><h2>当前赛程与积分</h2><div id="manager-preview"></div></section></div></main><script id="event-data" type="application/json">{
-  "end": "2026-11-07T21:00:00+08:00",
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>男子赛 · 赛事管理</title><link rel="stylesheet" href="../shared/event.css?v=29"><link rel="stylesheet" href="../shared/admin.css?v=29"></head><body class="boys live-manager"><main class="wrap manager"><a href="./">← 返回男子赛事</a><h1>复觌·雪象杯男子赛 · 赛事管理</h1><p id="store-status" role="status" aria-live="polite">正在检查云端连接…</p><section id="login-panel" class="panel"><h2>管理员登录</h2><p>登录后录入比分、发布赛事公告。</p><form id="login-form"><label>管理密码<input type="password" name="password" autocomplete="current-password" required></label><button class="button" id="login-button">登录</button></form></section><div id="admin-workspace" hidden><div class="toolbar"><button id="cloud-refresh" class="button quiet">刷新云端资料</button><button id="export" class="button quiet">下载数据备份</button><button id="logout" class="button quiet">退出登录</button></div><section class="panel"><h2>1. 填写队伍与分组</h2><p>直接在 A1–D4 填写地区和队名，一次发布16个签位。已有比分后请联系主办方核对，不重新录入分组。</p><form id="draw-form"><div id="draw-fields" class="draw-fields"></div><button class="button">保存队名及分组并发布</button></form><button id="reset-draw" class="button quiet">清空签位（仅开赛前）</button></section><section class="panel"><h2>现场比分</h2><form id="live-score-form"><label>选择场次<select id="live-score-match" name="match"></select></label><p id="score-match-info"></p><label>本场赛制<select id="format-id" name="formatId"><option value="">后半程局数待确认，请先选择</option><option value="bo3-capped">三局两胜 · 25/25/15 · 30/30/25封顶</option><option value="bo3-uncapped">三局两胜 · 25/25/15 · 两分领先不封顶</option></select></label><p class="muted">小组赛按男子章程两分领先、不封顶；后半程须由主办方明确选择本场规则。正在进行的局分可随时保存，只有已结束比赛计入排名。</p><div class="score-grid"><span>局数</span><b id="score-a-label">队伍A</b><b id="score-b-label">队伍B</b><span>第1局</span><label><span class="sr-only">第1局 A队</span><input type="number" inputmode="numeric" min="0" max="1000" name="a1"></label><label><span class="sr-only">第1局 B队</span><input type="number" inputmode="numeric" min="0" max="1000" name="b1"></label><span>第2局</span><label><span class="sr-only">第2局 A队</span><input type="number" inputmode="numeric" min="0" max="1000" name="a2"></label><label><span class="sr-only">第2局 B队</span><input type="number" inputmode="numeric" min="0" max="1000" name="b2"></label><span>第3局</span><label><span class="sr-only">第3局 A队</span><input type="number" inputmode="numeric" min="0" max="1000" name="a3"></label><label><span class="sr-only">第3局 B队</span><input type="number" inputmode="numeric" min="0" max="1000" name="b3"></label></div><label>比赛状态<select name="status"><option value="upcoming">未开始</option><option value="live">正在进行</option><option value="final">已结束</option><option value="postponed">延期</option><option value="cancelled">取消</option></select></label><button class="button">保存比分并发布</button></form></section><section class="panel"><h2>3. 完全同分名次确认</h2><p>仅当本组全部结束、胜场／积分／C／Z完全相同时使用。按组委会最终决定录入次序；网站不执行抽签。后半程已有比分后不可更改。</p><form id="tie-form"><label>组别<select name="group" id="tie-group"><option>A</option><option>B</option><option>C</option><option>D</option></select></label><div id="tie-fields" class="draw-fields"></div><button class="button quiet">确认本组名次并发布</button></form></section><div id="content-manager"></div><section class="panel"><h2>裁判次数</h2><p>小组赛按轮值队伍执裁；每队人员要求按男子章程执行。排位赛主副裁为主办方，边裁标注上一场比赛队伍。</p><div id="ref-counts" class="draw-fields"></div></section><section class="panel"><h2>当前赛程与积分</h2><div id="manager-preview"></div></section></div></main><script id="event-data" type="application/json">{
+  "end": "2026-11-07T21:30:00+08:00",
   "ball": "Mikasa V200W",
   "slug": "xuexiangboys",
   "rules": [
     {
-      "body": "2026 年 11 月 7 日（星期六）09:00–21:00，深圳市龙岗区中浩二路源创空间雪象园区 A5 栋一层雪象排球馆。",
+      "body": "2026 年 11 月 7 日（星期六）09:00–21:30，深圳市龙岗区中浩二路源创空间雪象园区 A5 栋一层雪象排球馆。",
       "title": "比赛时间与场馆"
     },
     {
-      "body": "四组前两名出线，其余队伍参加排位赛。淘汰赛：A1 对 D2、B1 对 C2、C1 对 B2、D1 对 A2；半决赛：第 1 场胜方对第 3 场胜方，第 2 场胜方对第 4 场胜方。完整赛程待公布。",
+      "body": "四组前两名出线，其余队伍参加排位赛。淘汰赛：A1 对 D2、B1 对 C2、C1 对 B2、D1 对 A2；半决赛：第 1 场胜方对第 3 场胜方，第 2 场胜方对第 4 场胜方。完整赛程见赛程页面。",
       "title": "小组赛与晋级"
     },
     {
@@ -44,146 +44,1224 @@
   "teams": [
     {
       "code": "M01",
-      "name": "Zoo Party",
-      "seed": "",
-      "group": "",
+      "name": "深圳珞珈山",
+      "seed": "A1",
+      "group": "A",
       "region": "",
-      "roster": [],
+      "roster": [
+        {
+          "name": "武庭照",
+          "number": "1",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "吴晨",
+          "number": "2",
+          "captain": true,
+          "position": ""
+        },
+        {
+          "name": "雷宗霖",
+          "number": "3",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "廖鹏宇",
+          "number": "4",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "彭新宇",
+          "number": "5",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "卢纪印",
+          "number": "6",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "苏钰然",
+          "number": "7",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "周邦栋",
+          "number": "8",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "龚博儒",
+          "number": "9",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "彭治杰",
+          "number": "10",
+          "captain": false,
+          "position": ""
+        }
+      ],
       "listNumber": 1
     },
     {
       "code": "M02",
       "name": "广州超粤",
-      "seed": "",
-      "group": "",
+      "seed": "A2",
+      "group": "A",
       "region": "广州",
-      "roster": [],
+      "roster": [
+        {
+          "name": "刘富江",
+          "number": "3",
+          "captain": true,
+          "position": ""
+        },
+        {
+          "name": "廖家乐",
+          "number": "1",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "蔡鹏飞",
+          "number": "4",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "蔡梓炫",
+          "number": "7",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "黄裕浚",
+          "number": "8",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "钟子健",
+          "number": "9",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "王展",
+          "number": "10",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "周骏锋",
+          "number": "11",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "温子骐",
+          "number": "18",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "傅晓基",
+          "number": "20",
+          "captain": false,
+          "position": ""
+        }
+      ],
       "listNumber": 2
     },
     {
       "code": "M03",
-      "name": "惠州K.T国际学苑",
-      "seed": "",
-      "group": "",
+      "name": "深圳湘港",
+      "seed": "A3",
+      "group": "A",
       "region": "惠州",
-      "roster": [],
+      "roster": [
+        {
+          "name": "李浩霖",
+          "number": "3",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "陈金昭",
+          "number": "11",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "刘助润",
+          "number": "18",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "李中康",
+          "number": "10",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "刘文俊",
+          "number": "7",
+          "captain": true,
+          "position": ""
+        },
+        {
+          "name": "王哲琪",
+          "number": "6",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "Lorenzo",
+          "number": "9",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "肖铭",
+          "number": "4",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "林震琛",
+          "number": "2",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "顾呈诚",
+          "number": "76",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "邹欣锐",
+          "number": "1",
+          "captain": false,
+          "position": ""
+        }
+      ],
       "listNumber": 3
     },
     {
       "code": "M04",
-      "name": "澳门梓楓体育会",
-      "seed": "",
-      "group": "",
+      "name": "深圳XJBD",
+      "seed": "A4",
+      "group": "A",
       "region": "澳门",
-      "roster": [],
+      "roster": [
+        {
+          "name": "庄如城",
+          "number": "13",
+          "captain": true,
+          "position": ""
+        },
+        {
+          "name": "胡青杨",
+          "number": "4",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "邹林峰",
+          "number": "7",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "黄靖宇",
+          "number": "15",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "李哲",
+          "number": "2",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "胡皓辰",
+          "number": "5",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "唐麒",
+          "number": "4",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "肖宇",
+          "number": "33",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "吴旻坤",
+          "number": "9",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "黄可",
+          "number": "72",
+          "captain": false,
+          "position": ""
+        }
+      ],
       "listNumber": 4
     },
     {
       "code": "M05",
-      "name": "中山ZMUN",
-      "seed": "",
-      "group": "",
+      "name": "K.T国际学苑",
+      "seed": "B1",
+      "group": "B",
       "region": "中山",
-      "roster": [],
+      "roster": [
+        {
+          "name": "黄振伦",
+          "number": "10",
+          "captain": true,
+          "position": ""
+        },
+        {
+          "name": "饶兆琮",
+          "number": "2",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "李景新",
+          "number": "67",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "任柏豪",
+          "number": "14",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "谭启源",
+          "number": "8",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "王卓轩",
+          "number": "13",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "周子杰",
+          "number": "69",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "冯梓浩",
+          "number": "6",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "黄明贤",
+          "number": "1",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "杨振威",
+          "number": "43",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "庄纪来",
+          "number": "24",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "叶永健",
+          "number": "28",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "郑浩然",
+          "number": "12",
+          "captain": false,
+          "position": ""
+        }
+      ],
       "listNumber": 5
     },
     {
       "code": "M06",
-      "name": "珠海三威",
-      "seed": "",
-      "group": "",
+      "name": "深圳石更",
+      "seed": "B2",
+      "group": "B",
       "region": "珠海",
-      "roster": [],
+      "roster": [
+        {
+          "name": "区文滔",
+          "number": "11",
+          "captain": true,
+          "position": ""
+        },
+        {
+          "name": "林洛可",
+          "number": "4",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "曾健维",
+          "number": "6",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "关祖涛",
+          "number": "7",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "韦青茂",
+          "number": "9",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "蓝泽龙",
+          "number": "10",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "何健文",
+          "number": "13",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "郑凯文",
+          "number": "14",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "陈立恩",
+          "number": "15",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "张楷健",
+          "number": "17",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "朱晓寰",
+          "number": "19",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "唐清云",
+          "number": "20",
+          "captain": false,
+          "position": ""
+        }
+      ],
       "listNumber": 6
     },
     {
       "code": "M07",
-      "name": "沙河学院",
-      "seed": "",
-      "group": "",
+      "name": "深圳GSV",
+      "seed": "B3",
+      "group": "B",
       "region": "",
-      "roster": [],
+      "roster": [
+        {
+          "name": "陈景辉",
+          "number": "1",
+          "captain": true,
+          "position": ""
+        },
+        {
+          "name": "陈景鸿",
+          "number": "3",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "李湛荣",
+          "number": "16",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "张俊鹏",
+          "number": "7",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "王婉蓉",
+          "number": "8",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "肖健翔",
+          "number": "15",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "张梓荣",
+          "number": "4",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "曾科桦",
+          "number": "13",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "张小为",
+          "number": "14",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "陈伟聪",
+          "number": "81",
+          "captain": false,
+          "position": ""
+        }
+      ],
       "listNumber": 7
     },
     {
       "code": "M08",
-      "name": "VBRO",
-      "seed": "",
-      "group": "",
+      "name": "深圳兔米特",
+      "seed": "B4",
+      "group": "B",
       "region": "",
-      "roster": [],
+      "roster": [
+        {
+          "name": "崔俊杰",
+          "number": "11",
+          "captain": true,
+          "position": ""
+        },
+        {
+          "name": "阿迪力",
+          "number": "4",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "王今",
+          "number": "5",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "黄铭彦",
+          "number": "9",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "朱家佑",
+          "number": "10",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "李相言",
+          "number": "14",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "王浩宇",
+          "number": "15",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "于航",
+          "number": "16",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "吴仁浩",
+          "number": "19",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "周祖兴",
+          "number": "26",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "杨钧皓",
+          "number": "29",
+          "captain": false,
+          "position": ""
+        }
+      ],
       "listNumber": 8
     },
     {
       "code": "M09",
-      "name": "GSV",
-      "seed": "",
-      "group": "",
+      "name": "深圳THU.",
+      "seed": "C1",
+      "group": "C",
       "region": "",
-      "roster": [],
+      "roster": [
+        {
+          "name": "张心语",
+          "number": "5",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "罗煌献",
+          "number": "12",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "陈海彬",
+          "number": "10",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "邱浩鑫",
+          "number": "18",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "洪震",
+          "number": "11",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "刘文豪",
+          "number": "77",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "李英杰",
+          "number": "8",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "何燕锋",
+          "number": "6",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "沈奕轩",
+          "number": "7",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "楚阳阳",
+          "number": "17",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "黎韦涛",
+          "number": "34",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "周昌盛",
+          "number": "37",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "刘嘉诚",
+          "number": "71",
+          "captain": false,
+          "position": ""
+        }
+      ],
       "listNumber": 9
     },
     {
       "code": "M10",
-      "name": "XJBD",
-      "seed": "",
-      "group": "",
+      "name": "深圳沙河学院",
+      "seed": "C2",
+      "group": "C",
       "region": "",
-      "roster": [],
+      "roster": [
+        {
+          "name": "田得元",
+          "number": "6",
+          "captain": true,
+          "position": ""
+        },
+        {
+          "name": "魏一鑫",
+          "number": "4",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "陈堆",
+          "number": "2",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "杨堃",
+          "number": "5",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "吴盛理",
+          "number": "8",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "闫忆彬",
+          "number": "23",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "李继业",
+          "number": "9",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "黄冠超",
+          "number": "30",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "冷俊",
+          "number": "17",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "周泰一",
+          "number": "19",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "陈泽滨",
+          "number": "26",
+          "captain": false,
+          "position": ""
+        }
+      ],
       "listNumber": 10
     },
     {
       "code": "M11",
-      "name": "珞珈山",
-      "seed": "",
-      "group": "",
+      "name": "中山ZMUN",
+      "seed": "C3",
+      "group": "C",
       "region": "",
-      "roster": [],
+      "roster": [
+        {
+          "name": "黄璜",
+          "number": "12",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "肖骁哲",
+          "number": "11",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "周廷铉",
+          "number": "1",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "何浚杰",
+          "number": "77",
+          "captain": true,
+          "position": ""
+        },
+        {
+          "name": "李永濠",
+          "number": "16",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "陈浩杰",
+          "number": "10",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "凌毅东",
+          "number": "17",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "代成龙",
+          "number": "27",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "蔡昊东",
+          "number": "15",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "卢赐乐",
+          "number": "5",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "林思宪",
+          "number": "9",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "陈嘉伦",
+          "number": "8",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "林骏汝",
+          "number": "18",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "周子涵",
+          "number": "20",
+          "captain": false,
+          "position": ""
+        }
+      ],
       "listNumber": 11
     },
     {
       "code": "M12",
-      "name": "兔米特",
-      "seed": "",
-      "group": "",
+      "name": "湾区VBRO",
+      "seed": "C4",
+      "group": "C",
       "region": "",
-      "roster": [],
+      "roster": [
+        {
+          "name": "林鑫淼",
+          "number": "3",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "姚凯智",
+          "number": "4",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "于畅",
+          "number": "7",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "杨龙晖",
+          "number": "8",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "张耀日",
+          "number": "10",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "余昆洋",
+          "number": "11",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "杨凯程",
+          "number": "13",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "段惟瀚",
+          "number": "17",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "张雪豪",
+          "number": "18",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "付豪",
+          "number": "20",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "董含灵",
+          "number": "88",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "林圳标",
+          "number": "1023",
+          "captain": false,
+          "position": ""
+        }
+      ],
       "listNumber": 12
     },
     {
       "code": "M13",
-      "name": "小浪底",
-      "seed": "",
-      "group": "",
+      "name": "深圳小浪底",
+      "seed": "D1",
+      "group": "D",
       "region": "",
-      "roster": [],
+      "roster": [
+        {
+          "name": "刘智",
+          "number": "0",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "曾维涛",
+          "number": "1",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "刘文宇",
+          "number": "4",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "杨泽航",
+          "number": "5",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "黄雨晨",
+          "number": "6",
+          "captain": true,
+          "position": ""
+        },
+        {
+          "name": "黄竞全",
+          "number": "7",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "卢国锋",
+          "number": "8",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "苏轮",
+          "number": "15",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "姬建平",
+          "number": "17",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "高智超",
+          "number": "18",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "刘健均",
+          "number": "22",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "谢孟达",
+          "number": "23",
+          "captain": false,
+          "position": ""
+        }
+      ],
       "listNumber": 13
     },
     {
       "code": "M14",
-      "name": "南科大",
-      "seed": "",
-      "group": "",
+      "name": "澳門驁駿體育會",
+      "seed": "D2",
+      "group": "D",
       "region": "",
-      "roster": [],
+      "roster": [
+        {
+          "name": "李棵榮",
+          "number": "4",
+          "captain": true,
+          "position": ""
+        },
+        {
+          "name": "楊兆聲",
+          "number": "2",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "崔景堯",
+          "number": "1",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "蕭景煒",
+          "number": "5",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "吳睿龍",
+          "number": "10",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "陳宏楷",
+          "number": "11",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "吳誠一",
+          "number": "14",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "黎尚一",
+          "number": "3",
+          "captain": false,
+          "position": ""
+        }
+      ],
       "listNumber": 14
     },
     {
       "code": "M15",
-      "name": "湘港",
-      "seed": "",
-      "group": "",
+      "name": "广州ZooParty",
+      "seed": "D3",
+      "group": "D",
       "region": "",
-      "roster": [],
+      "roster": [
+        {
+          "name": "陈如明",
+          "number": "6",
+          "captain": true,
+          "position": ""
+        },
+        {
+          "name": "杨城",
+          "number": "2",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "麦颖燊",
+          "number": "18",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "熊宇辰",
+          "number": "16",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "丘振钢",
+          "number": "9",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "吴天乐",
+          "number": "5",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "关智健",
+          "number": "10",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "赵嘉威",
+          "number": "59",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "丘梓裕",
+          "number": "7",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "陈伟昊",
+          "number": "11",
+          "captain": false,
+          "position": ""
+        }
+      ],
       "listNumber": 15
     },
     {
       "code": "M16",
-      "name": "Thu.",
-      "seed": "",
-      "group": "",
+      "name": "珠海三威集团",
+      "seed": "D4",
+      "group": "D",
       "region": "",
-      "roster": [],
+      "roster": [
+        {
+          "name": "贝思喆",
+          "number": "12",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "黄宇洲",
+          "number": "18",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "李浩贤",
+          "number": "0",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "黄世波",
+          "number": "10",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "李栩逸",
+          "number": "11",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "潘俊成",
+          "number": "11",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "王泽桉",
+          "number": "13",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "颜建杰",
+          "number": "7",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "王元彪",
+          "number": "8",
+          "captain": false,
+          "position": ""
+        },
+        {
+          "name": "李绎东",
+          "number": "9",
+          "captain": false,
+          "position": ""
+        }
+      ],
       "listNumber": 16
     }
   ],
@@ -255,7 +1333,7 @@
       "no": 1,
       "ref": "C1 / C2",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T09:00",
       "court": "1号场",
       "group": "A",
       "stage": "group",
@@ -276,7 +1354,7 @@
       "no": 2,
       "ref": "C3 / C4",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T09:00",
       "court": "2号场",
       "group": "A",
       "stage": "group",
@@ -297,7 +1375,7 @@
       "no": 3,
       "ref": "D1 / D2",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T09:00",
       "court": "3号场",
       "group": "B",
       "stage": "group",
@@ -318,7 +1396,7 @@
       "no": 4,
       "ref": "D3 / D4",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T09:00",
       "court": "4号场",
       "group": "B",
       "stage": "group",
@@ -339,7 +1417,7 @@
       "no": 5,
       "ref": "A1 / A2",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T10:00",
       "court": "1号场",
       "group": "C",
       "stage": "group",
@@ -360,7 +1438,7 @@
       "no": 6,
       "ref": "A3 / A4",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T10:00",
       "court": "2号场",
       "group": "C",
       "stage": "group",
@@ -381,7 +1459,7 @@
       "no": 7,
       "ref": "B1 / B2",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T10:00",
       "court": "3号场",
       "group": "D",
       "stage": "group",
@@ -402,7 +1480,7 @@
       "no": 8,
       "ref": "B3 / B4",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T10:00",
       "court": "4号场",
       "group": "D",
       "stage": "group",
@@ -423,7 +1501,7 @@
       "no": 9,
       "ref": "C1 / C2",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T11:00",
       "court": "1号场",
       "group": "A",
       "stage": "group",
@@ -444,7 +1522,7 @@
       "no": 10,
       "ref": "C3 / C4",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T11:00",
       "court": "2号场",
       "group": "A",
       "stage": "group",
@@ -465,7 +1543,7 @@
       "no": 11,
       "ref": "D1 / D2",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T11:00",
       "court": "3号场",
       "group": "B",
       "stage": "group",
@@ -486,7 +1564,7 @@
       "no": 12,
       "ref": "D3 / D4",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T11:00",
       "court": "4号场",
       "group": "B",
       "stage": "group",
@@ -507,7 +1585,7 @@
       "no": 13,
       "ref": "A1 / A3",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T12:00",
       "court": "1号场",
       "group": "C",
       "stage": "group",
@@ -528,7 +1606,7 @@
       "no": 14,
       "ref": "A2 / A4",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T12:00",
       "court": "2号场",
       "group": "C",
       "stage": "group",
@@ -549,7 +1627,7 @@
       "no": 15,
       "ref": "B1 / B3",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T12:00",
       "court": "3号场",
       "group": "D",
       "stage": "group",
@@ -570,7 +1648,7 @@
       "no": 16,
       "ref": "B2 / B4",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T12:00",
       "court": "4号场",
       "group": "D",
       "stage": "group",
@@ -591,7 +1669,7 @@
       "no": 17,
       "ref": "C1 / C3",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T13:00",
       "court": "1号场",
       "group": "A",
       "stage": "group",
@@ -612,7 +1690,7 @@
       "no": 18,
       "ref": "C2 / C4",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T13:00",
       "court": "2号场",
       "group": "A",
       "stage": "group",
@@ -633,7 +1711,7 @@
       "no": 19,
       "ref": "D1 / D3",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T13:00",
       "court": "3号场",
       "group": "B",
       "stage": "group",
@@ -654,7 +1732,7 @@
       "no": 20,
       "ref": "D2 / D4",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T13:00",
       "court": "4号场",
       "group": "B",
       "stage": "group",
@@ -675,7 +1753,7 @@
       "no": 21,
       "ref": "A1 / A4",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T14:00",
       "court": "1号场",
       "group": "C",
       "stage": "group",
@@ -696,7 +1774,7 @@
       "no": 22,
       "ref": "A2 / A3",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T14:00",
       "court": "2号场",
       "group": "C",
       "stage": "group",
@@ -717,7 +1795,7 @@
       "no": 23,
       "ref": "B1 / B4",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T14:00",
       "court": "3号场",
       "group": "D",
       "stage": "group",
@@ -738,7 +1816,7 @@
       "no": 24,
       "ref": "B2 / B3",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T14:00",
       "court": "4号场",
       "group": "D",
       "stage": "group",
@@ -761,7 +1839,7 @@
       "no": 25,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T15:30",
       "court": "1号场",
       "group": "",
       "stage": "placement",
@@ -784,7 +1862,7 @@
       "no": 26,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T15:30",
       "court": "2号场",
       "group": "",
       "stage": "placement",
@@ -807,7 +1885,7 @@
       "no": 27,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T15:30",
       "court": "3号场",
       "group": "",
       "stage": "placement",
@@ -830,7 +1908,7 @@
       "no": 28,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T15:30",
       "court": "4号场",
       "group": "",
       "stage": "placement",
@@ -853,7 +1931,7 @@
       "no": 29,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T16:30",
       "court": "1号场",
       "group": "",
       "stage": "knockout",
@@ -876,7 +1954,7 @@
       "no": 30,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T16:30",
       "court": "2号场",
       "group": "",
       "stage": "knockout",
@@ -899,7 +1977,7 @@
       "no": 31,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T16:30",
       "court": "3号场",
       "group": "",
       "stage": "knockout",
@@ -922,7 +2000,7 @@
       "no": 32,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T16:30",
       "court": "4号场",
       "group": "",
       "stage": "knockout",
@@ -943,7 +2021,7 @@
       "no": 33,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T17:30",
       "court": "1号场",
       "group": "",
       "stage": "placement",
@@ -964,7 +2042,7 @@
       "no": 34,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T17:30",
       "court": "2号场",
       "group": "",
       "stage": "placement",
@@ -985,7 +2063,7 @@
       "no": 35,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T17:30",
       "court": "3号场",
       "group": "",
       "stage": "placement",
@@ -1006,7 +2084,7 @@
       "no": 36,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T17:30",
       "court": "4号场",
       "group": "",
       "stage": "placement",
@@ -1027,7 +2105,7 @@
       "no": 37,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T18:30",
       "court": "1号场",
       "group": "",
       "stage": "knockout",
@@ -1048,7 +2126,7 @@
       "no": 38,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T18:30",
       "court": "2号场",
       "group": "",
       "stage": "knockout",
@@ -1069,7 +2147,7 @@
       "no": 39,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T18:30",
       "court": "3号场",
       "group": "",
       "stage": "placement",
@@ -1090,7 +2168,7 @@
       "no": 40,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T18:30",
       "court": "4号场",
       "group": "",
       "stage": "placement",
@@ -1111,7 +2189,7 @@
       "no": 41,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T19:30",
       "court": "1号场",
       "group": "",
       "stage": "placement",
@@ -1132,7 +2210,7 @@
       "no": 42,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T19:30",
       "court": "2号场",
       "group": "",
       "stage": "placement",
@@ -1153,7 +2231,7 @@
       "no": 43,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T19:30",
       "court": "3号场",
       "group": "",
       "stage": "placement",
@@ -1174,7 +2252,7 @@
       "no": 44,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T19:30",
       "court": "4号场",
       "group": "",
       "stage": "placement",
@@ -1195,7 +2273,7 @@
       "no": 45,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T20:30",
       "court": "1号场",
       "group": "",
       "stage": "knockout",
@@ -1216,7 +2294,7 @@
       "no": 46,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T20:30",
       "court": "2号场",
       "group": "",
       "stage": "knockout",
@@ -1237,7 +2315,7 @@
       "no": 47,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T20:30",
       "court": "3号场",
       "group": "",
       "stage": "placement",
@@ -1258,7 +2336,7 @@
       "no": 48,
       "ref": "主办方",
       "sets": [],
-      "time": "",
+      "time": "2026-11-07T20:30",
       "court": "4号场",
       "group": "",
       "stage": "placement",
@@ -1269,7 +2347,7 @@
     }
   ],
   "streams": [],
-  "updated": "2026-10-20T01:44:51.302Z",
+  "updated": "2026-10-23T14:08:14.248Z",
   "capacity": 16,
   "contacts": [
     {
@@ -1286,7 +2364,7 @@
   "dateLabel": "2026.11.07 · 星期六",
   "groupSize": 4,
   "netHeight": "2.43 米",
-  "timeLabel": "09:00–21:00",
+  "timeLabel": "09:00–21:30",
   "dateSource": "男子赛事章程",
   "podiumNote": "前三名颁发奖金、奖牌，并自动获得 2027 年度夏季赛事参赛资格。",
   "scoreRules": {
@@ -1334,7 +2412,7 @@
       "metro": "约 30 分钟"
     }
   },
-  "scheduleNote": "比赛时间待公布；对阵按男子章程配置。",
+  "scheduleNote": "",
   "teamListNote": "队伍与分组由主办方在赛事管理后台录入后公布。",
   "announcements": [
     {
@@ -1362,17 +2440,28 @@
     "D4": 3
   },
   "schemaVersion": 27,
-  "scheduleEvents": [],
+  "scheduleEvents": [
+    {
+      "time": "15:00–15:30",
+      "title": "全员大合照 · 小组赛排名统计"
+    },
+    {
+      "time": "21:40",
+      "title": "颁奖仪式"
+    }
+  ],
   "formatConfirmed": true,
   "registrationFee": 1000,
   "rankingOverrides": {},
-  "rostersPublished": false,
+  "rostersPublished": true,
   "documentsDeadline": "2026-10-17",
   "qualifiedPerGroup": 2,
   "refereePolicyNote": "小组赛参照已确认的轮值队伍安排，人员要求按男子章程；后半程主副裁标注主办方，边裁标注上一场比赛队伍。",
-  "scheduleConfirmed": false,
+  "scheduleConfirmed": true,
   "pendingTeamNumbers": [],
-  "teamNamesPublished": false,
+  "teamNamesPublished": true,
   "registrationDeadline": "2026-10-17",
-  "drawAssignmentsConfirmed": false
-}</script><script src="../shared/event.js?v=28"></script><script src="live-config.js?v=28"></script><script src="../shared/live.js?v=28"></script><script src="../shared/admin.js?v=28"></script></body></html>
+  "drawAssignmentsConfirmed": true,
+  "adminMode": "scores-announcements",
+  "freezeCompetitionSetup": true
+}</script><script src="../shared/event.js?v=29"></script><script src="live-config.js?v=29"></script><script src="../shared/live.js?v=29"></script><script src="../shared/admin.js?v=29"></script></body></html>
