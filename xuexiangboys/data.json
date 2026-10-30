@@ -53,7 +53,6 @@
           "name": "武庭照",
           "number": "1",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -61,7 +60,6 @@
           "name": "吴晨",
           "number": "2",
           "captain": true,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -69,7 +67,6 @@
           "name": "雷宗霖",
           "number": "3",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -77,7 +74,6 @@
           "name": "廖鹏宇",
           "number": "4",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -85,7 +81,6 @@
           "name": "彭新宇",
           "number": "5",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -93,7 +88,6 @@
           "name": "卢纪印",
           "number": "6",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -101,7 +95,6 @@
           "name": "苏钰然",
           "number": "7",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -109,7 +102,6 @@
           "name": "周邦栋",
           "number": "8",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -117,7 +109,6 @@
           "name": "龚博儒",
           "number": "9",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -125,7 +116,6 @@
           "name": "彭治杰",
           "number": "10",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         }
@@ -134,89 +124,65 @@
     },
     {
       "code": "M02",
-      "name": "广州超粤",
+      "name": "香港省港奇兵",
       "seed": "A2",
       "group": "A",
       "region": "广州",
       "roster": [
         {
-          "name": "刘富江",
-          "number": "3",
+          "name": "周靖喆",
+          "number": "5",
+          "captain": false,
+          "level": "一级",
+          "restricted": false
+        },
+        {
+          "name": "梁智華",
+          "number": "33",
           "captain": true,
-          "position": "",
-          "level": "一级",
+          "level": "无级别",
           "restricted": false
         },
         {
-          "name": "廖家乐",
-          "number": "1",
-          "captain": false,
-          "position": "",
-          "level": "一级",
-          "restricted": false
-        },
-        {
-          "name": "蔡鹏飞",
-          "number": "4",
-          "captain": false,
-          "position": "",
-          "level": "一级",
-          "restricted": false
-        },
-        {
-          "name": "蔡梓炫",
-          "number": "7",
-          "captain": false,
-          "position": "",
-          "level": "一级",
-          "restricted": false
-        },
-        {
-          "name": "黄裕浚",
-          "number": "8",
-          "captain": false,
-          "position": "",
-          "level": "一级",
-          "restricted": false
-        },
-        {
-          "name": "钟子健",
-          "number": "9",
-          "captain": false,
-          "position": "",
-          "level": "一级",
-          "restricted": false
-        },
-        {
-          "name": "王展",
-          "number": "10",
-          "captain": false,
-          "position": "",
-          "level": "一级",
-          "restricted": false
-        },
-        {
-          "name": "周骏锋",
+          "name": "孫梓軒",
           "number": "11",
           "captain": false,
-          "position": "",
-          "level": "一级",
+          "level": "无级别",
           "restricted": false
         },
         {
-          "name": "温子骐",
-          "number": "18",
+          "name": "凌浚軒",
+          "number": "10",
           "captain": false,
-          "position": "",
-          "level": "一级",
+          "level": "无级别",
           "restricted": false
         },
         {
-          "name": "傅晓基",
-          "number": "20",
+          "name": "陳鈺",
+          "number": "6",
           "captain": false,
-          "position": "",
-          "level": "一级",
+          "level": "无级别",
+          "restricted": false
+        },
+        {
+          "name": "李文焯",
+          "number": "23",
+          "captain": false,
+          "level": "无级别",
+          "restricted": false
+        },
+        {
+          "name": "蕭丞希",
+          "number": "55",
+          "captain": false,
+          "level": "无级别",
+          "restricted": false
+        },
+        {
+          "name": "畢駿禧",
+          "number": "16",
+          "captain": false,
+          "level": "无级别",
           "restricted": false
         }
       ],
@@ -233,7 +199,6 @@
           "name": "李浩霖",
           "number": "3",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -241,7 +206,6 @@
           "name": "陈金昭",
           "number": "11",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -249,7 +213,6 @@
           "name": "刘助润",
           "number": "18",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -257,7 +220,6 @@
           "name": "李中康",
           "number": "10",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -265,7 +227,6 @@
           "name": "刘文俊",
           "number": "7",
           "captain": true,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -273,7 +234,6 @@
           "name": "王哲琪",
           "number": "6",
           "captain": false,
-          "position": "",
           "level": "一级",
           "restricted": false
         },
@@ -281,7 +241,6 @@
           "name": "Lorenzo",
           "number": "9",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -289,7 +248,6 @@
           "name": "肖铭",
           "number": "4",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -297,7 +255,6 @@
           "name": "林震琛",
           "number": "2",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -305,7 +262,6 @@
           "name": "顾呈诚",
           "number": "76",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -313,7 +269,20 @@
           "name": "邹欣锐",
           "number": "1",
           "captain": false,
-          "position": "",
+          "level": "无级别",
+          "restricted": false
+        },
+        {
+          "name": "徐梓淩",
+          "number": "23",
+          "captain": false,
+          "level": "无级别",
+          "restricted": false
+        },
+        {
+          "name": "吴多达",
+          "number": "77",
+          "captain": false,
           "level": "无级别",
           "restricted": false
         }
@@ -331,7 +300,6 @@
           "name": "庄如城",
           "number": "13",
           "captain": true,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -339,7 +307,6 @@
           "name": "胡青杨",
           "number": "4",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -347,7 +314,6 @@
           "name": "邹林峰",
           "number": "7",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -355,7 +321,6 @@
           "name": "黄靖宇",
           "number": "15",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -363,7 +328,6 @@
           "name": "李哲",
           "number": "2",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -371,7 +335,6 @@
           "name": "胡皓辰",
           "number": "5",
           "captain": false,
-          "position": "",
           "level": "一级",
           "restricted": false
         },
@@ -379,7 +342,6 @@
           "name": "唐麒",
           "number": "4",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -387,7 +349,6 @@
           "name": "肖宇",
           "number": "33",
           "captain": false,
-          "position": "",
           "level": "一级",
           "restricted": false
         },
@@ -395,7 +356,6 @@
           "name": "吴旻坤",
           "number": "9",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -403,7 +363,6 @@
           "name": "黄可",
           "number": "72",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         }
@@ -421,7 +380,6 @@
           "name": "黄振伦",
           "number": "10",
           "captain": true,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -429,7 +387,6 @@
           "name": "饶兆琮",
           "number": "2",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -437,7 +394,6 @@
           "name": "李景新",
           "number": "67",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -445,7 +401,6 @@
           "name": "任柏豪",
           "number": "14",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -453,7 +408,6 @@
           "name": "谭启源",
           "number": "8",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -461,7 +415,6 @@
           "name": "王卓轩",
           "number": "13",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -469,7 +422,6 @@
           "name": "周子杰",
           "number": "69",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -477,7 +429,6 @@
           "name": "冯梓浩",
           "number": "6",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -485,7 +436,6 @@
           "name": "黄明贤",
           "number": "1",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -493,7 +443,6 @@
           "name": "杨振威",
           "number": "43",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -501,7 +450,6 @@
           "name": "庄纪来",
           "number": "24",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -509,7 +457,6 @@
           "name": "叶永健",
           "number": "28",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -517,7 +464,6 @@
           "name": "郑浩然",
           "number": "12",
           "captain": false,
-          "position": "",
           "level": "一级",
           "restricted": false
         }
@@ -535,7 +481,6 @@
           "name": "区文滔",
           "number": "11",
           "captain": true,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -543,7 +488,6 @@
           "name": "林洛可",
           "number": "4",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -551,7 +495,6 @@
           "name": "曾健维",
           "number": "6",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -559,7 +502,6 @@
           "name": "关祖涛",
           "number": "7",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -567,7 +509,6 @@
           "name": "韦青茂",
           "number": "9",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -575,7 +516,6 @@
           "name": "蓝泽龙",
           "number": "10",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -583,7 +523,6 @@
           "name": "何健文",
           "number": "13",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -591,7 +530,6 @@
           "name": "郑凯文",
           "number": "14",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -599,7 +537,6 @@
           "name": "陈立恩",
           "number": "15",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -607,7 +544,6 @@
           "name": "张楷健",
           "number": "17",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -615,7 +551,6 @@
           "name": "朱晓寰",
           "number": "19",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -623,7 +558,6 @@
           "name": "唐清云",
           "number": "20",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         }
@@ -641,7 +575,6 @@
           "name": "陈景辉",
           "number": "1",
           "captain": true,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -649,7 +582,6 @@
           "name": "陈景鸿",
           "number": "3",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -657,7 +589,6 @@
           "name": "李湛荣",
           "number": "16",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -665,7 +596,6 @@
           "name": "张俊鹏",
           "number": "7",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -673,7 +603,6 @@
           "name": "王婉蓉",
           "number": "8",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -681,7 +610,6 @@
           "name": "肖健翔",
           "number": "15",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -689,7 +617,6 @@
           "name": "张梓荣",
           "number": "4",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -697,7 +624,6 @@
           "name": "曾科桦",
           "number": "13",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -705,7 +631,6 @@
           "name": "张小为",
           "number": "14",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -713,7 +638,13 @@
           "name": "陈伟聪",
           "number": "81",
           "captain": false,
-          "position": "",
+          "level": "无级别",
+          "restricted": false
+        },
+        {
+          "name": "刘宇鹏",
+          "number": "8",
+          "captain": false,
           "level": "无级别",
           "restricted": false
         }
@@ -731,7 +662,6 @@
           "name": "崔俊杰",
           "number": "11",
           "captain": true,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -739,7 +669,6 @@
           "name": "阿迪力",
           "number": "4",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -747,7 +676,6 @@
           "name": "王今",
           "number": "5",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -755,7 +683,6 @@
           "name": "黄铭彦",
           "number": "9",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -763,7 +690,6 @@
           "name": "朱家佑",
           "number": "10",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -771,7 +697,6 @@
           "name": "李相言",
           "number": "14",
           "captain": false,
-          "position": "",
           "level": "二级",
           "restricted": false
         },
@@ -779,7 +704,6 @@
           "name": "王浩宇",
           "number": "15",
           "captain": false,
-          "position": "",
           "level": "二级",
           "restricted": false
         },
@@ -787,7 +711,6 @@
           "name": "于航",
           "number": "16",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -795,7 +718,6 @@
           "name": "吴仁浩",
           "number": "19",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -803,7 +725,6 @@
           "name": "周祖兴",
           "number": "26",
           "captain": false,
-          "position": "",
           "level": "健将",
           "restricted": false
         },
@@ -811,7 +732,6 @@
           "name": "杨钧皓",
           "number": "29",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         }
@@ -829,7 +749,6 @@
           "name": "张心语",
           "number": "5",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -837,7 +756,6 @@
           "name": "罗煌献",
           "number": "12",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -845,7 +763,6 @@
           "name": "陈海彬",
           "number": "10",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -853,7 +770,6 @@
           "name": "邱浩鑫",
           "number": "18",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -861,7 +777,6 @@
           "name": "洪震",
           "number": "11",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -869,15 +784,13 @@
           "name": "刘文豪",
           "number": "77",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
         {
-          "name": "李英杰",
-          "number": "8",
+          "name": "龚良柱",
+          "number": "7",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -885,7 +798,6 @@
           "name": "何燕锋",
           "number": "6",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -893,7 +805,6 @@
           "name": "沈奕轩",
           "number": "7",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -901,7 +812,6 @@
           "name": "楚阳阳",
           "number": "17",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -909,7 +819,6 @@
           "name": "黎韦涛",
           "number": "34",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -917,7 +826,6 @@
           "name": "周昌盛",
           "number": "37",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -925,7 +833,13 @@
           "name": "刘嘉诚",
           "number": "71",
           "captain": false,
-          "position": "",
+          "level": "无级别",
+          "restricted": false
+        },
+        {
+          "name": "邓子劲",
+          "number": "6",
+          "captain": false,
           "level": "无级别",
           "restricted": false
         }
@@ -943,7 +857,6 @@
           "name": "田得元",
           "number": "6",
           "captain": true,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -951,7 +864,6 @@
           "name": "魏一鑫",
           "number": "4",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -959,7 +871,6 @@
           "name": "陈堆",
           "number": "2",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -967,7 +878,6 @@
           "name": "杨堃",
           "number": "5",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -975,7 +885,6 @@
           "name": "吴盛理",
           "number": "8",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -983,7 +892,6 @@
           "name": "闫忆彬",
           "number": "23",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -991,7 +899,6 @@
           "name": "李继业",
           "number": "9",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -999,7 +906,6 @@
           "name": "黄冠超",
           "number": "30",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1007,7 +913,6 @@
           "name": "冷俊",
           "number": "17",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1015,7 +920,6 @@
           "name": "周泰一",
           "number": "19",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1023,7 +927,6 @@
           "name": "陈泽滨",
           "number": "26",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         }
@@ -1041,7 +944,6 @@
           "name": "黄璜",
           "number": "12",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1049,7 +951,6 @@
           "name": "肖骁哲",
           "number": "11",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1057,7 +958,6 @@
           "name": "周廷铉",
           "number": "1",
           "captain": false,
-          "position": "",
           "level": "二级",
           "restricted": false
         },
@@ -1065,7 +965,6 @@
           "name": "何浚杰",
           "number": "77",
           "captain": true,
-          "position": "",
           "level": "无级别",
           "restricted": true
         },
@@ -1073,7 +972,6 @@
           "name": "李永濠",
           "number": "16",
           "captain": false,
-          "position": "",
           "level": "一级",
           "restricted": false
         },
@@ -1081,7 +979,6 @@
           "name": "陈浩杰",
           "number": "10",
           "captain": false,
-          "position": "",
           "level": "二级",
           "restricted": false
         },
@@ -1089,7 +986,6 @@
           "name": "凌毅东",
           "number": "17",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": true
         },
@@ -1097,7 +993,6 @@
           "name": "代成龙",
           "number": "27",
           "captain": false,
-          "position": "",
           "level": "一级",
           "restricted": false
         },
@@ -1105,7 +1000,6 @@
           "name": "蔡昊东",
           "number": "15",
           "captain": false,
-          "position": "",
           "level": "一级",
           "restricted": false
         },
@@ -1113,7 +1007,6 @@
           "name": "卢赐乐",
           "number": "5",
           "captain": false,
-          "position": "",
           "level": "一级",
           "restricted": false
         },
@@ -1121,7 +1014,6 @@
           "name": "林思宪",
           "number": "9",
           "captain": false,
-          "position": "",
           "level": "一级",
           "restricted": false
         },
@@ -1129,7 +1021,6 @@
           "name": "陈嘉伦",
           "number": "8",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1137,7 +1028,6 @@
           "name": "林骏汝",
           "number": "18",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1145,7 +1035,6 @@
           "name": "周子涵",
           "number": "20",
           "captain": false,
-          "position": "",
           "level": "一级",
           "restricted": false
         }
@@ -1262,6 +1151,13 @@
           "level": "健将",
           "restricted": false,
           "captain": false
+        },
+        {
+          "name": "周政",
+          "number": "1",
+          "level": "一级",
+          "restricted": false,
+          "captain": false
         }
       ],
       "listNumber": 12
@@ -1277,7 +1173,6 @@
           "name": "刘智",
           "number": "0",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1285,7 +1180,6 @@
           "name": "曾维涛",
           "number": "1",
           "captain": false,
-          "position": "",
           "level": "一级",
           "restricted": false
         },
@@ -1293,7 +1187,6 @@
           "name": "刘文宇",
           "number": "4",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1301,7 +1194,6 @@
           "name": "杨泽航",
           "number": "5",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1309,7 +1201,6 @@
           "name": "黄雨晨",
           "number": "6",
           "captain": true,
-          "position": "",
           "level": "一级",
           "restricted": false
         },
@@ -1317,7 +1208,6 @@
           "name": "黄竞全",
           "number": "7",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1325,7 +1215,6 @@
           "name": "卢国锋",
           "number": "8",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1333,7 +1222,6 @@
           "name": "苏轮",
           "number": "15",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1341,7 +1229,6 @@
           "name": "姬建平",
           "number": "17",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1349,7 +1236,6 @@
           "name": "高智超",
           "number": "18",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1357,7 +1243,6 @@
           "name": "刘健均",
           "number": "22",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1365,7 +1250,6 @@
           "name": "谢孟达",
           "number": "23",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         }
@@ -1383,7 +1267,6 @@
           "name": "李棵榮",
           "number": "4",
           "captain": true,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1391,7 +1274,6 @@
           "name": "楊兆聲",
           "number": "2",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1399,7 +1281,6 @@
           "name": "崔景堯",
           "number": "1",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1407,7 +1288,6 @@
           "name": "蕭景煒",
           "number": "5",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1415,7 +1295,6 @@
           "name": "吳睿龍",
           "number": "10",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1423,7 +1302,6 @@
           "name": "陳宏楷",
           "number": "11",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1431,7 +1309,6 @@
           "name": "吳誠一",
           "number": "14",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1439,7 +1316,6 @@
           "name": "黎尚一",
           "number": "3",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         }
@@ -1457,7 +1333,6 @@
           "name": "陈如明",
           "number": "6",
           "captain": true,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1465,7 +1340,6 @@
           "name": "杨城",
           "number": "2",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1473,7 +1347,6 @@
           "name": "麦颖燊",
           "number": "18",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1481,7 +1354,6 @@
           "name": "熊宇辰",
           "number": "16",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1489,7 +1361,6 @@
           "name": "丘振钢",
           "number": "9",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1497,7 +1368,6 @@
           "name": "吴天乐",
           "number": "5",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1505,7 +1375,6 @@
           "name": "关智健",
           "number": "10",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1513,7 +1382,6 @@
           "name": "赵嘉威",
           "number": "59",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1521,7 +1389,6 @@
           "name": "丘梓裕",
           "number": "7",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1529,7 +1396,6 @@
           "name": "陈伟昊",
           "number": "11",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         }
@@ -1547,7 +1413,6 @@
           "name": "贝思喆",
           "number": "12",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1555,7 +1420,6 @@
           "name": "黄宇洲",
           "number": "18",
           "captain": false,
-          "position": "",
           "level": "一级",
           "restricted": false
         },
@@ -1563,7 +1427,6 @@
           "name": "李浩贤",
           "number": "0",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1571,7 +1434,6 @@
           "name": "黄世波",
           "number": "10",
           "captain": false,
-          "position": "",
           "level": "二级",
           "restricted": false
         },
@@ -1579,7 +1441,6 @@
           "name": "李栩逸",
           "number": "11",
           "captain": false,
-          "position": "",
           "level": "一级",
           "restricted": false
         },
@@ -1587,7 +1448,6 @@
           "name": "潘俊成",
           "number": "11",
           "captain": false,
-          "position": "",
           "level": "无级别",
           "restricted": false
         },
@@ -1595,7 +1455,6 @@
           "name": "王泽桉",
           "number": "13",
           "captain": false,
-          "position": "",
           "level": "一级",
           "restricted": false
         },
@@ -1603,7 +1462,6 @@
           "name": "颜建杰",
           "number": "7",
           "captain": false,
-          "position": "",
           "level": "二级",
           "restricted": false
         },
@@ -1611,7 +1469,6 @@
           "name": "王元彪",
           "number": "8",
           "captain": false,
-          "position": "",
           "level": "二级",
           "restricted": false
         },
@@ -1619,7 +1476,6 @@
           "name": "李绎东",
           "number": "9",
           "captain": false,
-          "position": "",
           "level": "一级",
           "restricted": false
         }
