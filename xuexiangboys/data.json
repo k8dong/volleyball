@@ -161,12 +161,12 @@
           "name": "陳鈺",
           "number": "6",
           "captain": false,
-          "level": "无级别",
+          "level": "一级",
           "restricted": false
         },
         {
           "name": "李文焯",
-          "number": "23",
+          "number": "3",
           "captain": false,
           "level": "无级别",
           "restricted": false
@@ -181,6 +181,13 @@
         {
           "name": "畢駿禧",
           "number": "16",
+          "captain": false,
+          "level": "无级别",
+          "restricted": false
+        },
+        {
+          "name": "區政言",
+          "number": "12",
           "captain": false,
           "level": "无级别",
           "restricted": false
@@ -365,6 +372,13 @@
           "captain": false,
           "level": "无级别",
           "restricted": false
+        },
+        {
+          "name": "李泽林",
+          "number": "3",
+          "captain": false,
+          "level": "无级别",
+          "restricted": false
         }
       ],
       "listNumber": 4
@@ -412,7 +426,7 @@
           "restricted": false
         },
         {
-          "name": "王卓轩",
+          "name": "柳中彥",
           "number": "13",
           "captain": false,
           "level": "无级别",
@@ -647,6 +661,13 @@
           "captain": false,
           "level": "无级别",
           "restricted": false
+        },
+        {
+          "name": "李智繁",
+          "number": "10",
+          "captain": false,
+          "level": "无级别",
+          "restricted": false
         }
       ],
       "listNumber": 7
@@ -875,6 +896,13 @@
           "restricted": false
         },
         {
+          "name": "杨嘉雯",
+          "number": "27",
+          "captain": false,
+          "level": "无级别",
+          "restricted": false
+        },
+        {
           "name": "杨堃",
           "number": "5",
           "captain": false,
@@ -943,6 +971,13 @@
         {
           "name": "黄璜",
           "number": "12",
+          "captain": false,
+          "level": "无级别",
+          "restricted": false
+        },
+        {
+          "name": "陶然",
+          "number": "2",
           "captain": false,
           "level": "无级别",
           "restricted": false
@@ -1032,10 +1067,10 @@
           "restricted": false
         },
         {
-          "name": "周子涵",
-          "number": "20",
+          "name": "王希文",
+          "number": "3",
           "captain": false,
-          "level": "一级",
+          "level": "无级别",
           "restricted": false
         }
       ],
@@ -1344,8 +1379,8 @@
           "restricted": false
         },
         {
-          "name": "麦颖燊",
-          "number": "18",
+          "name": "卢伟东",
+          "number": "66",
           "captain": false,
           "level": "无级别",
           "restricted": false
@@ -1372,8 +1407,8 @@
           "restricted": false
         },
         {
-          "name": "关智健",
-          "number": "10",
+          "name": "杨后羿",
+          "number": "15",
           "captain": false,
           "level": "无级别",
           "restricted": false
@@ -1398,6 +1433,20 @@
           "captain": false,
           "level": "无级别",
           "restricted": false
+        },
+        {
+          "name": "王贝霖",
+          "number": "1",
+          "captain": false,
+          "level": "无级别",
+          "restricted": false
+        },
+        {
+          "name": "罗涛",
+          "number": "123",
+          "captain": false,
+          "level": "无级别",
+          "restricted": false
         }
       ],
       "listNumber": 15
@@ -1412,7 +1461,7 @@
         {
           "name": "贝思喆",
           "number": "12",
-          "captain": false,
+          "captain": true,
           "level": "无级别",
           "restricted": false
         },
@@ -1438,13 +1487,6 @@
           "restricted": false
         },
         {
-          "name": "李栩逸",
-          "number": "11",
-          "captain": false,
-          "level": "一级",
-          "restricted": false
-        },
-        {
           "name": "潘俊成",
           "number": "11",
           "captain": false,
@@ -1466,6 +1508,13 @@
           "restricted": false
         },
         {
+          "name": "李绎东",
+          "number": "9",
+          "captain": false,
+          "level": "一级",
+          "restricted": false
+        },
+        {
           "name": "王元彪",
           "number": "8",
           "captain": false,
@@ -1473,10 +1522,38 @@
           "restricted": false
         },
         {
-          "name": "李绎东",
-          "number": "9",
+          "name": "李栩逸",
+          "number": "11",
           "captain": false,
           "level": "一级",
+          "restricted": false
+        },
+        {
+          "name": "赵泉焯",
+          "number": "1",
+          "captain": false,
+          "level": "一级",
+          "restricted": false
+        },
+        {
+          "name": "蔡谨励",
+          "number": "15",
+          "captain": false,
+          "level": "二级",
+          "restricted": false
+        },
+        {
+          "name": "张家硕",
+          "number": "5",
+          "captain": false,
+          "level": "一级",
+          "restricted": false
+        },
+        {
+          "name": "林家豪",
+          "number": "21",
+          "captain": false,
+          "level": "无级别",
           "restricted": false
         }
       ],
