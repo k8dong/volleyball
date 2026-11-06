@@ -58,63 +58,63 @@
         },
         {
           "name": "吴晨",
-          "number": "2",
+          "number": "5",
           "captain": true,
           "level": "无级别",
           "restricted": false
         },
         {
           "name": "雷宗霖",
-          "number": "3",
-          "captain": false,
-          "level": "无级别",
-          "restricted": false
-        },
-        {
-          "name": "廖鹏宇",
-          "number": "4",
-          "captain": false,
-          "level": "无级别",
-          "restricted": false
-        },
-        {
-          "name": "彭新宇",
-          "number": "5",
-          "captain": false,
-          "level": "无级别",
-          "restricted": false
-        },
-        {
-          "name": "卢纪印",
-          "number": "6",
-          "captain": false,
-          "level": "无级别",
-          "restricted": false
-        },
-        {
-          "name": "苏钰然",
-          "number": "7",
-          "captain": false,
-          "level": "无级别",
-          "restricted": false
-        },
-        {
-          "name": "周邦栋",
           "number": "8",
           "captain": false,
           "level": "无级别",
           "restricted": false
         },
         {
+          "name": "廖鹏宇",
+          "number": "7",
+          "captain": false,
+          "level": "无级别",
+          "restricted": false
+        },
+        {
+          "name": "彭新宇",
+          "number": "16",
+          "captain": false,
+          "level": "无级别",
+          "restricted": false
+        },
+        {
+          "name": "卢纪印",
+          "number": "77",
+          "captain": false,
+          "level": "无级别",
+          "restricted": false
+        },
+        {
+          "name": "苏钰然",
+          "number": "17",
+          "captain": false,
+          "level": "无级别",
+          "restricted": false
+        },
+        {
+          "name": "周邦栋",
+          "number": "66",
+          "captain": false,
+          "level": "无级别",
+          "restricted": false
+        },
+        {
           "name": "龚博儒",
-          "number": "9",
+          "number": "32",
           "captain": false,
           "level": "无级别",
           "restricted": false
         },
         {
           "name": "彭治杰",
-          "number": "10",
+          "number": "9",
           "captain": false,
           "level": "无级别",
           "restricted": false
@@ -190,6 +190,13 @@
           "number": "12",
           "captain": false,
           "level": "无级别",
+          "restricted": false
+        },
+        {
+          "name": "龔梁柱",
+          "number": "7",
+          "captain": false,
+          "level": "一级",
           "restricted": false
         }
       ],
@@ -668,6 +675,13 @@
           "captain": false,
           "level": "无级别",
           "restricted": false
+        },
+        {
+          "name": "宋树鑫",
+          "number": "99",
+          "captain": false,
+          "level": "无级别",
+          "restricted": false
         }
       ],
       "listNumber": 7
@@ -809,8 +823,8 @@
           "restricted": false
         },
         {
-          "name": "龚良柱",
-          "number": "7",
+          "name": "刘健",
+          "number": "15",
           "captain": false,
           "level": "无级别",
           "restricted": false
@@ -823,8 +837,8 @@
           "restricted": false
         },
         {
-          "name": "沈奕轩",
-          "number": "7",
+          "name": "邝浩劲",
+          "number": "3",
           "captain": false,
           "level": "无级别",
           "restricted": false
